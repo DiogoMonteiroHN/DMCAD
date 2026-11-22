@@ -29,6 +29,9 @@ ${NOME} é o projecto de ${PESSOA.nome} (${PESSOA.nomeCurto}), ${PESSOA.funcao.c
 ## Formas de trabalhar
 ${OFERTA.map((o) => `- ${o.titulo}: ${o.texto}`).join("\n")}
 
+## O teste da legenda
+- Em ${SITE}/#teste há um teste gratuito: cola-se a legenda de uma publicação e o site marca os sinais de texto genérico (lugares-comuns, português do Brasil, promessas exageradas, emojis a mais, gritos, falta de pormenor concreto e de próximo passo). Corre no browser; o texto não é enviado nem guardado.
+
 ## Caso real
 - belessa.pt: programa para salões, estúdios e clínicas (agenda, marcações online, faturação e site), o projecto em que ${PESSOA.nomeCurto} trabalha com IA. Não é cliente da ${NOME}.
 

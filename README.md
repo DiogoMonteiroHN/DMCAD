@@ -10,8 +10,9 @@ Next.js 16 (página estática), cores e letras do Brand Book v5 (22/11/2026).
 - Factos da marca (oferta, perguntas, contactos, morada): `src/app/marca.ts` — a página, os dados
   estruturados (`dados-estruturados.tsx`) e o `/llms.txt` leem todos daqui.
 - Textos da página: `src/app/page.tsx`. Cores: `src/app/globals.css` (`:root`).
-- A antena: `src/app/antena.tsx` (imagem, vem no HTML) e `src/app/cena-antena.ts` (a torre em 3D,
-  three.js, carregada à parte por `antena-3d.tsx`; fica a imagem com «menos movimento» ou poupança de dados).
+- O exemplo do topo (`legenda-exemplo.tsx`) e o teste da legenda (`teste-da-legenda.tsx`) usam as
+  mesmas regras, em `sinais.ts`.
+- A torre da RARET em 3D: `torre.tsx`, desenhada à mão num canvas 2D (sem bibliotecas).
 - SEO, GEO e AEO: metadados em `layout.tsx`, `robots.ts` (aberto aos assistentes de IA), `sitemap.ts`,
   `llms.txt/route.ts` e o JSON-LD (Organization, Person, WebSite, FAQPage).
-- Sem cookies, sem estatísticas, sem formulários: a página não guarda dados de quem a visita.
+- Sem cookies nem estatísticas; o teste da legenda corre no browser e não envia nada. A página não guarda dados de quem a visita.

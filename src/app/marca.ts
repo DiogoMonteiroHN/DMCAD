@@ -77,3 +77,10 @@ export const PERGUNTAS = [
     resposta: `Por mensagem no Instagram (@diogomm1992) ou por email para ${EMAIL}. Diz que negócio tens, onde fica e o que queres resolver primeiro.`,
   },
 ];
+
+// A legenda de exemplo do topo: um salão inventado, para mostrar o método.
+// Não é de nenhum cliente.
+export const LEGENDA_ANTES =
+  "✨💅 Realce a sua beleza com uma experiência única! 💖✨ Venha descobrir o nosso espaço e mime-se. Marque já!!! 🔥";
+export const LEGENDA_DEPOIS =
+  "Manicure com verniz gel, 45 minutos. Esta semana ainda há vagas na terça e na quinta à tarde. Marca pela ligação na bio 💅";

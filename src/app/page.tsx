@@ -1,57 +1,27 @@
 import Image from "next/image";
-import { Antena } from "./antena";
-import { Antena3D } from "./antena-3d";
 import { DadosEstruturados } from "./dados-estruturados";
-import { EMAIL, INSTAGRAM, MORADA, NIF, OFERTA, PERGUNTAS, PESSOA } from "./marca";
+import { LegendaExemplo } from "./legenda-exemplo";
+import { ASSINATURA, EMAIL, INSTAGRAM, MORADA, NIF, OFERTA, PERGUNTAS, PESSOA } from "./marca";
+import { TesteDaLegenda } from "./teste-da-legenda";
+import { Torre } from "./torre";
 
-
-const PARA_QUEM = [
-  {
-    pergunta: "O que queres resolver",
-    resposta: "Material publicitário, publicações, textos, fotos de serviços e produtos, o site.",
-  },
-  {
-    pergunta: "O que te trava",
-    resposta: "A correria do dia-a-dia. Não sobra tempo para aprender ferramentas novas.",
-  },
-  {
-    pergunta: "O que já tentaste",
-    resposta: "Gerar imagens e textos com IA. Ficaram genéricos, iguais aos de toda a gente.",
-  },
-  {
-    pergunta: "O que levas daqui",
-    resposta: "As ferramentas certas, explicadas de forma simples, para poupares tempo e te destacares.",
-  },
-];
-
-const DEFENDO = [
-  "Qualquer negócio se pode destacar com IA, se a souber usar bem.",
-  "A IA não substitui a equipa. Ajuda cada pessoa a render mais.",
-  "A IA veio para ficar. Aprender a usá-la é uma vantagem prática.",
-];
-
-const REJEITO = [
-  "«A IA vai tirar o emprego a toda a gente.»",
-  "Promessas de ganhar dinheiro sem trabalho.",
-  "Imagens e textos genéricos, iguais aos de todos.",
-  "Resultados garantidos e entusiasmo sem prova.",
-];
+const MANIFESTO = "A IA não substitui a tua equipa. Ajuda cada pessoa a render mais, e deixa-te tempo para os clientes.";
 
 const METODO = [
   {
-    titulo: "Ferramenta certa",
+    titulo: "A ferramenta certa.",
     texto:
-      "Um problema concreto do teu negócio e uma ferramenta para o resolver: a foto de um serviço, uma promoção, a resposta a um pedido de marcação.",
+      "Um problema concreto do teu negócio e uma ferramenta para o resolver: a foto de um serviço, uma promoção, a resposta a um pedido de marcação. Não quinze aplicações; a que serve.",
   },
   {
-    titulo: "Explicação simples",
+    titulo: "Explicada de forma simples.",
     texto:
-      "Um passo de cada vez, sem siglas. Os nomes das ferramentas ficam no original; tudo o resto em português de Portugal.",
+      "Um passo de cada vez, sem siglas. Os nomes das ferramentas ficam no original; tudo o resto em português de Portugal, a pensar em quem tem dez minutos entre dois clientes.",
   },
   {
-    titulo: "Aplicação real",
+    titulo: "Aplicada no teu salão.",
     texto:
-      "Fazes com o teu material, no teu negócio. O resultado tem de parecer teu, não de uma máquina.",
+      "Fazes com o teu material, no teu negócio. O resultado tem de parecer teu: a tua luz, os teus serviços, a tua forma de falar. Se parecer feito por uma máquina, ainda não está pronto.",
   },
 ];
 
@@ -71,195 +41,168 @@ export default function Pagina() {
         Saltar para o conteúdo
       </a>
 
-      <header className="cabecalho envolvente">
-        <a href="/" className="cabecalho__marca" aria-label="DMCAD, página inicial">
+      <header className="topo envolvente">
+        <a href="/" className="topo__marca" aria-label="DMCAD, página inicial">
           <Image src="/dmcad-logo.png" alt="DMCAD" width={1200} height={371} priority sizes="132px" />
         </a>
-        <a href="#contacto" className="ligacao-forte">
-          Falar comigo
-        </a>
+        <nav aria-label="Principal" className="topo__nav">
+          <a href="#teste">O teste</a>
+          <a href="#como">Como trabalho</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
       </header>
 
       <main id="conteudo">
-        {/* Herói: problema, promessa e o botão principal (brandbook, cap. 07) */}
+        {/* 1. Herói: o problema mostrado, não descrito */}
         <section className="heroi envolvente" aria-labelledby="titulo-heroi">
           <div className="heroi__texto">
-            <p className="heroi__problema">As tuas imagens ainda parecem feitas por IA?</p>
-            <h1 id="titulo-heroi">Conteúdo melhor. Menos tempo perdido.</h1>
+            <p className="heroi__para">IA prática para salões, estética e cabeleireiros, em Portugal.</p>
+            <h1 id="titulo-heroi">
+              <span className="heroi__linha">Conteúdo melhor.</span>{" "}
+              <span className="heroi__linha">Menos tempo perdido.</span>
+            </h1>
             <p className="heroi__promessa">
-              IA prática para salões de beleza, centros de estética e cabeleireiros em Portugal. As ferramentas certas,
-              explicadas de forma simples, para fazeres publicações, fotos e textos que não parecem feitos por uma
-              máquina.
+              Mostro-te as ferramentas certas e como as usar, para que as tuas publicações, fotos e textos não pareçam
+              feitos por uma máquina.
             </p>
-            <a className="botao" href="#metodo">
-              Conhecer o método
-            </a>
+            <div className="heroi__accoes">
+              <a className="botao" href="#teste">
+                Testar a minha legenda
+              </a>
+              <a className="ligacao-forte" href="#contacto">
+                Falar comigo
+              </a>
+            </div>
           </div>
-          <Antena3D>
-            <Antena />
-          </Antena3D>
+          <LegendaExemplo />
         </section>
 
-        <section className="seccao envolvente" id="para-quem" aria-labelledby="titulo-para-quem">
-          <div className="seccao__cabeca">
-            <h2 id="titulo-para-quem">Para quem faz o marketing sozinho, entre clientes</h2>
-            <p>
-              Geres um salão, um centro de estética ou um cabeleireiro e és tu que fazes as publicações, as fotos dos
-              serviços, os textos e o site, no intervalo entre marcações.
-            </p>
-          </div>
-          <dl className="ficha">
-            {PARA_QUEM.map((linha) => (
-              <div key={linha.pergunta} className="ficha__linha">
-                <dt>{linha.pergunta}</dt>
-                <dd>{linha.resposta}</dd>
-              </div>
+        {/* 2. O manifesto: uma frase, grande, que se acende ao descer */}
+        <section className="manifesto" aria-label="O que defendo">
+          <p className="manifesto__frase envolvente">
+            {MANIFESTO.split(" ").map((palavra, i) => (
+              <span key={i} className="manifesto__palavra">
+                {palavra}{" "}
+              </span>
             ))}
-          </dl>
-          <p className="regra">
-            Se quem gere um salão em Santarém não percebe isto entre dois clientes e não o aplica no mesmo dia, ainda
-            não está bem explicado.
           </p>
         </section>
 
-        <section className="ponto-de-vista" aria-labelledby="titulo-ponto-de-vista">
-          <div className="envolvente">
-            <h2 id="titulo-ponto-de-vista" className="ponto-de-vista__titulo">
-              Bom conteúdo com IA não parece feito com IA.
-            </h2>
-            <div className="ponto-de-vista__colunas">
-              <div>
-                <h3>Defendo</h3>
-                <ul className="lista lista--defendo">
-                  {DEFENDO.map((t) => (
-                    <li key={t}>{t}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3>Rejeito</h3>
-                <ul className="lista lista--rejeito">
-                  {REJEITO.map((t) => (
-                    <li key={t}>{t}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="seccao envolvente" id="metodo" aria-labelledby="titulo-metodo">
-          <div className="seccao__cabeca">
-            <h2 id="titulo-metodo">Desenhar com rigor antes de construir</h2>
+        {/* 3. A peça de assinatura: o teste da legenda */}
+        <section className="seccao envolvente teste-seccao" id="teste" aria-labelledby="titulo-teste">
+          <div className="teste-seccao__cabeca">
+            <h2 id="titulo-teste">O teste da legenda</h2>
             <p>
-              O CAD do nome vem do desenho técnico: mede-se primeiro, constrói-se depois. Com a IA trabalho da mesma
-              forma, com método e precisão, sem improvisos.
+              Cola o texto da tua última publicação e vê o que o faz soar a genérico. As marcas vêm a azul, que é a cor da
+              IA nesta casa. É o primeiro passo do método: perceber o que falha antes de mudar de ferramenta.
             </p>
           </div>
-          <ol className="metodo">
-            {METODO.map((passo, i) => (
-              <li key={passo.titulo} className="metodo__passo">
-                <span className="metodo__numero" aria-hidden="true">
-                  {i + 1}
-                </span>
-                <h3>{passo.titulo}</h3>
-                <p>{passo.texto}</p>
+          <TesteDaLegenda />
+        </section>
+
+        {/* 4. O método: título preso à esquerda, os passos a correr à direita */}
+        <section className="seccao envolvente como" id="como" aria-labelledby="titulo-como">
+          <div className="como__fixo">
+            <h2 id="titulo-como">Desenhar com rigor antes de construir.</h2>
+            <p>
+              O CAD do nome vem do desenho técnico: mede-se primeiro, constrói-se depois. Com a IA trabalho da mesma
+              forma.
+            </p>
+          </div>
+          <ol className="como__passos">
+            {METODO.map((m) => (
+              <li key={m.titulo}>
+                <h3>{m.titulo}</h3>
+                <p>{m.texto}</p>
               </li>
             ))}
           </ol>
-          <p className="nota">
-            Exemplos do que se faz: refazer uma promoção, fotografar um serviço sem que pareça IA, responder mais
-            depressa a pedidos de marcação.
-          </p>
         </section>
 
-        <section className="seccao envolvente prova" id="prova" aria-labelledby="titulo-prova">
-          <div className="prova__texto">
-            <h2 id="titulo-prova">Um caso real: o belessa.pt</h2>
-            <p>
-              O Belessa é um programa para salões, estúdios e clínicas: agenda, marcações online, faturação e site, num
-              só sítio. É o projecto em que trabalho com IA, e é dele que vêm muitos dos exemplos que mostro: o que
-              funciona, o que não funciona e porquê.
-            </p>
-            <p>
+        {/* 5. A oferta como um índice */}
+        <section className="seccao envolvente oferta" aria-labelledby="titulo-oferta">
+          <h2 id="titulo-oferta" className="oferta__titulo">
+            Três formas de trabalharmos juntos
+          </h2>
+          <ul className="oferta__lista">
+            {OFERTA.map((o) => (
+              <li key={o.titulo} className="oferta__linha">
+                <h3>{o.titulo}</h3>
+                <p>{o.texto}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="oferta__nota">Os pormenores e o preço de cada uma combinam-se numa conversa.</p>
+        </section>
+
+        {/* 6. A prova */}
+        <section className="prova" aria-labelledby="titulo-prova">
+          <div className="envolvente prova__grelha">
+            <div className="prova__texto">
+              <h2 id="titulo-prova">Um caso real: o belessa.pt</h2>
+              <p>
+                Um programa para salões, estúdios e clínicas: agenda, marcações online, faturação e site, num só sítio. É
+                o projecto em que trabalho com IA, e é dele que vêm muitos dos exemplos que mostro: o que funciona, o que
+                não funciona e porquê.
+              </p>
               <a className="ligacao-forte" href="https://www.belessa.pt" target="_blank" rel="noopener">
                 Abrir o belessa.pt
                 <span className="visualmente-escondido"> (abre noutro separador)</span>
               </a>
-            </p>
-          </div>
-          <figure className="prova__ecra">
-            <div className="moldura">
-              <span className="moldura__barra" aria-hidden="true">
-                <span />
-                <span />
-                <span />
-                <span className="moldura__endereco">belessa.pt</span>
-              </span>
-              <Image
-                src="/belessa-pt.webp"
-                alt="Página inicial do belessa.pt: «Fecha a porta às oito e as contas já estão feitas», com a agenda num tablet e a marcação num telemóvel."
-                width={1600}
-                height={900}
-                sizes="(min-width: 960px) 640px, 100vw"
-              />
             </div>
-            <figcaption>Página inicial do belessa.pt, a 22 de Novembro de 2026.</figcaption>
-          </figure>
-        </section>
-
-        <section className="seccao envolvente" id="oferta" aria-labelledby="titulo-oferta">
-          <div className="seccao__cabeca">
-            <h2 id="titulo-oferta">Três formas de trabalharmos juntos</h2>
-            <p>Escolhe a que encaixa no tempo que tens. Os pormenores de cada uma combinam-se numa conversa.</p>
-          </div>
-          <div className="oferta">
-            {OFERTA.map((o) => (
-              <article key={o.titulo} className="oferta__item">
-                <h3>{o.titulo}</h3>
-                <p>{o.texto}</p>
-              </article>
-            ))}
+            <figure className="prova__ecra">
+              <div className="prova__moldura">
+                <Image
+                  src="/belessa-pt.webp"
+                  alt="Página inicial do belessa.pt: «Fecha a porta às oito e as contas já estão feitas», com a agenda num tablet e a marcação num telemóvel."
+                  width={1600}
+                  height={900}
+                  sizes="(min-width: 960px) 760px, 100vw"
+                />
+              </div>
+              <figcaption>Página inicial do belessa.pt, a 22 de Novembro de 2026.</figcaption>
+            </figure>
           </div>
         </section>
 
-        <section className="seccao envolvente sobre" id="sobre" aria-labelledby="titulo-sobre">
-          <div className="sobre__texto">
-            <h2 id="titulo-sobre">Da Glória para o mundo</h2>
-            <p>Sou o Diogo Monteiro, programador e técnico de suporte de TI, da Glória do Ribatejo.</p>
-            <p>
-              Entre 1951 e 1996, a RARET emitiu da Glória para o outro lado da Europa. Uma aldeia pequena ficou ligada
-              ao mundo por uma antena, e é essa a antena do logótipo. Hoje, a IA pode fazer o mesmo por um pequeno
-              negócio.
-            </p>
-            <p>
-              Quase todo o conteúdo sobre IA em português vem do Brasil. A DMCAD fala para Portugal, com as palavras de
-              cá: publicação, telemóvel, ecrã, marcação.
-            </p>
+        {/* 7. A origem: a RARET, em 3D */}
+        <section className="origem" id="sobre" aria-labelledby="titulo-origem">
+          <div className="envolvente origem__grelha">
+            <div className="origem__texto">
+              <p className="origem__anos" aria-hidden="true">
+                1951–1996
+              </p>
+              <h2 id="titulo-origem">Da Glória para o mundo</h2>
+              <p>
+                Sou o {PESSOA.nomeCurto}, programador e técnico de suporte de TI, da Glória do Ribatejo. Entre 1951 e
+                1996, a RARET emitiu dali para o outro lado da Europa: uma aldeia pequena ficou ligada ao mundo por uma
+                antena. É essa a antena do logótipo.
+              </p>
+              <p>
+                Hoje, a IA pode fazer o mesmo por um pequeno negócio. E como quase todo o conteúdo sobre IA em português
+                vem do Brasil, a DMCAD fala para Portugal, com as palavras de cá.
+              </p>
+              <dl className="origem__paralelo">
+                {RARET_DMCAD.map(([a, b]) => (
+                  <div key={a}>
+                    <dt>{a}</dt>
+                    <dd>{b}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+            <div className="origem__torre">
+              <Torre etiqueta="Desenho em 3D da antena da RARET, que se pode rodar com o dedo, o rato ou as setas do teclado." />
+              <p className="origem__dica">Arrasta para rodar a torre.</p>
+            </div>
           </div>
-          <table className="paralelo">
-            <caption className="visualmente-escondido">O que a RARET foi para a Glória e o que a DMCAD quer ser</caption>
-            <thead>
-              <tr>
-                <th scope="col">RARET</th>
-                <th scope="col">DMCAD</th>
-              </tr>
-            </thead>
-            <tbody>
-              {RARET_DMCAD.map(([a, b]) => (
-                <tr key={a}>
-                  <th scope="row">{a}</th>
-                  <td>{b}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
         </section>
 
+        {/* 8. Perguntas */}
         <section className="seccao envolvente perguntas" id="perguntas" aria-labelledby="titulo-perguntas">
-          <div className="seccao__cabeca">
-            <h2 id="titulo-perguntas">Perguntas frequentes</h2>
-          </div>
+          <h2 id="titulo-perguntas" className="perguntas__titulo">
+            Perguntas frequentes
+          </h2>
           <div className="perguntas__lista">
             {PERGUNTAS.map((p) => (
               <details key={p.pergunta} className="pergunta">
@@ -272,40 +215,43 @@ export default function Pagina() {
           </div>
         </section>
 
+        {/* 9. Contacto: o email é a peça */}
         <section className="contacto" id="contacto" aria-labelledby="titulo-contacto">
-          <div className="envolvente contacto__grelha">
-            <div>
-              <h2 id="titulo-contacto">Conta-me o que te está a tomar tempo</h2>
-              <p>
-                Manda-me uma mensagem no Instagram: que negócio tens, onde fica e o que queres resolver primeiro. A
-                partir daí vemos se faz sentido uma formação, um serviço ou uma mentoria.
-              </p>
-              <a className="botao botao--grande" href={INSTAGRAM} target="_blank" rel="noopener">
-                Abrir o Instagram @diogomm1992
+          <div className="envolvente">
+            <h2 id="titulo-contacto">Conta-me o que te está a tomar tempo.</h2>
+            <p className="contacto__texto">
+              Que negócio tens, onde fica e o que queres resolver primeiro. A partir daí vemos se faz sentido uma
+              formação, um serviço ou uma mentoria.
+            </p>
+            <a className="contacto__email" href={`mailto:${EMAIL}`}>
+              {EMAIL}
+            </a>
+            <p className="contacto__instagram">
+              Ou por mensagem no Instagram:{" "}
+              <a href={INSTAGRAM} target="_blank" rel="noopener">
+                @diogomm1992
                 <span className="visualmente-escondido"> (abre noutro separador)</span>
               </a>
-              <p className="contacto__alternativa">
-                Preferes email? Escreve para{" "}
-                <a className="ligacao-forte" href={`mailto:${EMAIL}`}>
-                  {EMAIL}
-                </a>
-              </p>
-            </div>
-            <p className="contacto__assinatura">Pequeno na origem. Longe no alcance.</p>
+            </p>
           </div>
         </section>
       </main>
 
       <footer className="rodape">
         <div className="envolvente rodape__grelha">
-          <p className="rodape__marca">DMCAD</p>
-          <p>Tecnologia para avançar. Humanidade para continuar.</p>
-          <address className="rodape__miudo rodape__identificacao">
+          <div>
+            <p className="rodape__marca">DMCAD</p>
+            <p>{ASSINATURA}</p>
+            <p className="rodape__fecho">Pequeno na origem. Longe no alcance.</p>
+          </div>
+          <address className="rodape__identificacao">
             {PESSOA.nome}
             <br />
             NIF {NIF}
             <br />
-            {MORADA.rua}, {MORADA.codigoPostal} {MORADA.localidade}
+            {MORADA.rua}
+            <br />
+            {MORADA.codigoPostal} {MORADA.localidade}
             <br />
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </address>

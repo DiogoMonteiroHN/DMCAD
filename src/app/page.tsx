@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { Apresentacao } from "./apresentacao";
+import { Comparador } from "./comparador";
 import { DadosEstruturados } from "./dados-estruturados";
 import { LegendaExemplo } from "./legenda-exemplo";
 import { ASSINATURA, EMAIL, INSTAGRAM, MORADA, NIF, OFERTA, PERGUNTAS, PESSOA } from "./marca";
+import { Pedido } from "./pedido";
 import { TesteDaLegenda } from "./teste-da-legenda";
 import { Torre } from "./torre";
 
@@ -48,6 +50,7 @@ export default function Pagina() {
         </a>
         <nav aria-label="Principal" className="topo__nav">
           <a href="#teste">O teste</a>
+          <a href="#imagens">Imagens</a>
           <a href="#como">Como trabalho</a>
           <a href="#contacto">Contacto</a>
         </nav>
@@ -97,6 +100,101 @@ export default function Pagina() {
             </p>
           </div>
           <TesteDaLegenda />
+        </section>
+
+        {/* 3b. Imagens com IA: exemplos práticos, gerados para esta página */}
+        <section className="seccao envolvente imagens" id="imagens" aria-labelledby="titulo-imagens">
+          <div className="imagens__cabeca">
+            <h2 id="titulo-imagens">E as imagens? Três exemplos práticos.</h2>
+            <p>
+              A IA ajuda a fazer fundos e composições para as tuas publicações. Não serve para mostrar o que não existe.
+              Gerei estas imagens para esta página, e deixo à vista o pedido que usei.
+            </p>
+          </div>
+
+          <article className="imagens__exemplo imagens__exemplo--comparar">
+            <Comparador />
+            <div className="imagens__texto">
+              <h3>Uma promoção de verniz gel</h3>
+              <p>Arrasta para comparar. As duas foram geradas por IA: o que muda é o pedido.</p>
+              <div className="imagens__colunas">
+                <div>
+                  <h4>A genérica</h4>
+                  <ul className="imagens__lista imagens__lista--nao">
+                    <li>Néon e brilhos que nenhum salão tem.</li>
+                    <li>Frascos a flutuar: ninguém acredita que é o teu.</li>
+                    <li>O texto foi a IA que o escreveu, e em inglês.</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>A natural</h4>
+                  <ul className="imagens__lista imagens__lista--sim">
+                    <li>Luz de janela e sombras verdadeiras.</li>
+                    <li>Cores calmas, de um espaço a sério.</li>
+                    <li>Espaço livre para o texto, que escreves tu, por cima.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article className="imagens__exemplo imagens__exemplo--nao">
+            <figure className="imagens__falso">
+              <Image
+                src="/exemplos/salao-inventado.webp"
+                alt="Interior de um salão de luxo gerado por IA: mármore branco, espelhos dourados, lustres de cristal e cadeiras de veludo cor-de-rosa, sem ninguém."
+                width={960}
+                height={960}
+                sizes="(min-width: 1000px) 480px, 100vw"
+              />
+              <figcaption className="imagens__carimbo">Este salão não existe. Foi gerado por IA.</figcaption>
+            </figure>
+            <div className="imagens__texto">
+              <h3>Como não usar: o teu espaço</h3>
+              <p>
+                Mármore, lustres, espelhos dourados e ninguém lá dentro. Parece um sonho, e é esse o problema: quem marca
+                contigo vai chegar a um sítio diferente.
+              </p>
+              <p>
+                Nunca geres o teu espaço, os teus trabalhos nem os teus clientes. Isso fotografa-se, com o telemóvel e a
+                luz de uma janela.
+              </p>
+            </div>
+          </article>
+
+          <article className="imagens__exemplo imagens__exemplo--pedido">
+            <div className="imagens__texto">
+              <h3>O pedido que fiz para a imagem natural</h3>
+              <p>
+                Copia-o, troca os objetos pelos do teu salão e experimenta. Está em inglês porque foi assim que o escrevi
+                para esta ferramenta.
+              </p>
+              <dl className="imagens__partes">
+                <div>
+                  <dt>A luz</dt>
+                  <dd>soft morning daylight, gentle real shadows</dd>
+                </div>
+                <div>
+                  <dt>Defeitos de propósito</dt>
+                  <dd>real textures and slight imperfections</dd>
+                </div>
+                <div>
+                  <dt>Lugar para o teu texto</dt>
+                  <dd>generous empty linen space in the upper third</dd>
+                </div>
+                <div>
+                  <dt>O que não queres</dt>
+                  <dd>no text, no people, no hands</dd>
+                </div>
+              </dl>
+            </div>
+            <div>
+              <Pedido />
+              <p className="imagens__nota">
+                Gerada com o modelo flux-2-pro, a 22 de Novembro de 2026. Cada imagem custou cerca de 3 cêntimos de dólar.
+              </p>
+            </div>
+          </article>
         </section>
 
         {/* 4. O método: título preso à esquerda, os passos a correr à direita */}

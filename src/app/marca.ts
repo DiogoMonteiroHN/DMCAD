@@ -104,3 +104,7 @@ export const TRANSCRICAO = [
   "Começa pelo teste da legenda, aqui no site. Cola o texto da tua última publicação e vê o que mudar.",
   "Depois, conta-me o que te está a tomar tempo.",
 ];
+
+// Os exemplos de imagens com IA (geradas a 22/11/2026, registo em docs/imagens-ia.md).
+export const PEDIDO_BOM =
+  "Overhead flat lay photograph on a crumpled natural linen cloth beside a window, soft morning daylight, gentle real shadows, three small bottles of nail polish in muted terracotta, nude beige and deep burgundy, a worn nail file and a small handmade ceramic dish, real textures and slight imperfections, muted natural colours, calm and honest, generous empty linen space in the upper third, no text, no people, no hands, 35mm film photography, editorial";

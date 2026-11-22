@@ -65,9 +65,9 @@ const OFERTA = [
       "Se não tens tempo para aprender, faço contigo: material publicitário, publicações ou o site, com IA e com a cara do teu negócio.",
   },
   {
-    titulo: "Palestras e demonstrações",
+    titulo: "Mentoria",
     texto:
-      "Uma demonstração ao vivo em 10 minutos, para experimentares com o teu próprio negócio. Para eventos e encontros do sector.",
+      "Acompanhamento caso a caso: trazes um problema do teu negócio e resolvemos juntos, com as ferramentas que fazem sentido para ti.",
   },
 ];
 
@@ -275,7 +275,7 @@ export default function Pagina() {
               <h2 id="titulo-contacto">Conta-me o que te está a tomar tempo</h2>
               <p>
                 Manda-me uma mensagem no Instagram: que negócio tens, onde fica e o que queres resolver primeiro. A
-                partir daí vemos se faz sentido uma formação, um serviço ou uma demonstração.
+                partir daí vemos se faz sentido uma formação, um serviço ou uma mentoria.
               </p>
               <a className="botao botao--grande" href={INSTAGRAM} target="_blank" rel="noopener">
                 Abrir o Instagram @diogomm1992

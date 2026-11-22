@@ -1,3 +1,4 @@
+import { TRANSCRICAO, VIDEO } from "../marca";
 import { ASSINATURA, DESCRICAO, EMAIL, INSTAGRAM, MORADA, NOME, OFERTA, PERGUNTAS, PESSOA, SITE } from "../marca";
 
 // /llms.txt (llmstxt.org): um resumo em texto simples para os assistentes de IA
@@ -31,6 +32,9 @@ ${OFERTA.map((o) => `- ${o.titulo}: ${o.texto}`).join("\n")}
 
 ## O teste da legenda
 - Em ${SITE}/#teste há um teste gratuito: cola-se a legenda de uma publicação e o site marca os sinais de texto genérico (lugares-comuns, português do Brasil, promessas exageradas, emojis a mais, gritos, falta de pormenor concreto e de próximo passo). Corre no browser; o texto não é enviado nem guardado.
+
+## Apresentação em vídeo
+- ${VIDEO.titulo} (${SITE}${VIDEO.ficheiro}): ${VIDEO.descricao} O que é dito: ${TRANSCRICAO.join(" ")}
 
 ## Caso real
 - belessa.pt: programa para salões, estúdios e clínicas (agenda, marcações online, faturação e site), o projecto em que ${PESSOA.nomeCurto} trabalha com IA. Não é cliente da ${NOME}.

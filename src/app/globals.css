@@ -1129,3 +1129,185 @@ main {
     border-top: 1px solid rgb(247 244 239 / 0.16);
   }
 }
+
+/* ---------- a apresentação em vídeo ---------- */
+
+.apresentacao-botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 54px;
+  padding: 0 4px 0 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.apresentacao-botao__rosto {
+  position: relative;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 2px var(--papel), 0 0 0 3.5px var(--preto);
+}
+
+.apresentacao-botao__rosto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* o triângulo de «reproduzir», sobre a cara */
+.apresentacao-botao__play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgb(17 17 17 / 0.28);
+  transition: background-color 160ms ease;
+}
+
+.apresentacao-botao__play::after {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-left: 3px;
+  border-style: solid;
+  border-width: 8px 0 8px 13px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.apresentacao-botao:hover .apresentacao-botao__play {
+  background: rgb(17 17 17 / 0.12);
+}
+
+.apresentacao-botao__textos {
+  display: grid;
+  line-height: 1.25;
+}
+
+.apresentacao-botao__titulo {
+  font-family: var(--letra-titulos), Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.0625rem;
+}
+
+.apresentacao-botao__nota {
+  font-size: 0.8125rem;
+  color: var(--cinza);
+}
+
+html:has(.apresentacao[open]) {
+  overflow: hidden;
+}
+
+.apresentacao {
+  width: min(100vw - 32px, 440px, (100dvh - 190px) * 9 / 16);
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--papel);
+  overflow: visible;
+}
+
+.apresentacao::backdrop {
+  background: rgb(17 17 17 / 0.82);
+  backdrop-filter: blur(4px);
+}
+
+.apresentacao__caixa {
+  display: grid;
+  gap: 12px;
+}
+
+.apresentacao__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.apresentacao__titulo {
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.apresentacao__fechar {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1.5px solid rgb(247 244 239 / 0.5);
+  border-radius: 999px;
+  background: none;
+  color: var(--papel);
+  font-family: var(--letra-titulos), Arial, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.apresentacao__fechar:hover {
+  border-color: var(--papel);
+}
+
+.apresentacao :focus-visible {
+  outline-color: var(--azul-claro);
+}
+
+.apresentacao__video {
+  position: relative;
+  /* cantos redondos como os do próprio vídeo, para esconder os cantos brancos dele */
+  border-radius: 11% / 6.2%;
+  overflow: hidden;
+  background: #000;
+}
+
+.apresentacao__video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  background: #000;
+  /* o vídeo traz uma margem branca nos cantos: amplia-se 4% e o recorte esconde-a */
+  transform: scale(1.045);
+}
+
+/* a etiqueta de IA fica sempre visível por cima do vídeo */
+.apresentacao__etiqueta {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgb(17 17 17 / 0.72);
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.apresentacao__transcricao summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: var(--letra-titulos), Arial, sans-serif;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--laranja);
+  text-underline-offset: 5px;
+}
+
+.apresentacao__transcricao div {
+  display: grid;
+  gap: 8px;
+  padding: 4px 0 8px;
+  font-size: 0.9375rem;
+  color: #e4dfd6;
+  max-height: 30dvh;
+  overflow: auto;
+}

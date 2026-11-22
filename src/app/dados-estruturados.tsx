@@ -9,6 +9,8 @@ import {
   PERGUNTAS,
   PESSOA,
   SITE,
+  TRANSCRICAO,
+  VIDEO,
 } from "./marca";
 
 // Dados estruturados (schema.org, JSON-LD): dizem ao Google e aos motores de IA,
@@ -74,6 +76,20 @@ export function DadosEstruturados() {
         jobTitle: PESSOA.funcao,
         homeLocation: { "@type": "Place", name: `${MORADA.localidade}, Portugal` },
         sameAs: [INSTAGRAM],
+      },
+      {
+        "@type": "VideoObject",
+        "@id": `${SITE}/#apresentacao`,
+        name: VIDEO.titulo,
+        description: VIDEO.descricao,
+        thumbnailUrl: `${SITE}${VIDEO.poster}`,
+        contentUrl: `${SITE}${VIDEO.ficheiro}`,
+        uploadDate: VIDEO.data,
+        duration: VIDEO.duracaoIso,
+        inLanguage: "pt-PT",
+        transcript: TRANSCRICAO.join(" "),
+        creator: { "@id": pessoa },
+        publisher: { "@id": org },
       },
       {
         "@type": "WebSite",

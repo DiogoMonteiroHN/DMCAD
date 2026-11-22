@@ -84,3 +84,23 @@ export const LEGENDA_ANTES =
   "✨💅 Realce a sua beleza com uma experiência única! 💖✨ Venha descobrir o nosso espaço e mime-se. Marque já!!! 🔥";
 export const LEGENDA_DEPOIS =
   "Manicure com verniz gel, 45 minutos. Esta semana ainda há vagas na terça e na quinta à tarde. Marca pela ligação na bio 💅";
+
+// A apresentação em vídeo (HeyGen, avatar do Diogo, 22/11/2026). O texto é o roteiro
+// que foi colado no HeyGen; as legendas do vídeo coincidem (conferido por amostragem).
+export const VIDEO = {
+  titulo: "A DMCAD em 38 segundos",
+  descricao: "Apresentação da DMCAD pelo avatar do Diogo Monteiro, criado com inteligência artificial.",
+  ficheiro: "/dmcad-apresentacao.mp4",
+  poster: "/dmcad-apresentacao.webp",
+  duracaoIso: "PT38S",
+  data: "2026-11-22",
+};
+
+export const TRANSCRICAO = [
+  "Olá, eu sou o Diogo. Ou melhor: sou o avatar do Diogo, feito com inteligência artificial.",
+  "Se não tinhas reparado, é exatamente disso que eu falo.",
+  "Ajudo salões de beleza, centros de estética e cabeleireiros em Portugal a usar a IA sem que as publicações, as fotos e os textos pareçam feitos por uma máquina.",
+  "A ferramenta certa, explicada de forma simples, aplicada no teu negócio. Para fazeres entre dois clientes, não em vez deles.",
+  "Começa pelo teste da legenda, aqui no site. Cola o texto da tua última publicação e vê o que mudar.",
+  "Depois, conta-me o que te está a tomar tempo.",
+];

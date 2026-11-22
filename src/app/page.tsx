@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Apresentacao } from "./apresentacao";
 import { DadosEstruturados } from "./dados-estruturados";
 import { LegendaExemplo } from "./legenda-exemplo";
 import { ASSINATURA, EMAIL, INSTAGRAM, MORADA, NIF, OFERTA, PERGUNTAS, PESSOA } from "./marca";
@@ -69,9 +70,7 @@ export default function Pagina() {
               <a className="botao" href="#teste">
                 Testar a minha legenda
               </a>
-              <a className="ligacao-forte" href="#contacto">
-                Falar comigo
-              </a>
+              <Apresentacao />
             </div>
           </div>
           <LegendaExemplo />

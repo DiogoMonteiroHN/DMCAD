@@ -1455,15 +1455,20 @@ html:has(.apresentacao[open]) {
   clip-path: inset(0 calc(100% - var(--pos)) 0 0);
 }
 
-/* o texto da promoção, posto à mão sobre o linho */
+/* o texto da promoção, posto à mão sobre o linho, numa faixa de papel sólida:
+   o contraste não pode depender da imagem (preto sobre o papel dá 17:1) */
 .comparador__texto {
   position: absolute;
-  left: 7%;
-  top: 7%;
-  max-width: 62%;
+  left: 6%;
+  top: 6%;
+  max-width: 70%;
+  padding: 12px 16px 14px;
+  border-radius: 10px;
+  background: var(--papel);
+  box-shadow: 0 8px 24px -12px rgb(17 17 17 / 0.45);
   font-family: var(--letra-titulos), Arial, sans-serif;
   font-weight: 700;
-  font-size: clamp(1.25rem, 0.8rem + 2vw, 2rem);
+  font-size: clamp(1.125rem, 0.8rem + 1.6vw, 1.75rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
   color: var(--preto);
@@ -1523,11 +1528,10 @@ html:has(.apresentacao[open]) {
   pointer-events: none;
 }
 
-.comparador__pega::after {
-  content: "‹ ›";
+.comparador__botao {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: clamp(28px, var(--pos), calc(100% - 28px));
   display: grid;
   place-items: center;
   width: 48px;
@@ -1541,9 +1545,10 @@ html:has(.apresentacao[open]) {
   font-size: 1.125rem;
   letter-spacing: 2px;
   box-shadow: 0 6px 20px rgb(17 17 17 / 0.25);
+  pointer-events: none;
 }
 
-.comparador:has(.comparador__cursor:focus-visible) .comparador__pega::after {
+.comparador:has(.comparador__cursor:focus-visible) .comparador__botao {
   outline: 3px solid var(--azul);
   outline-offset: 3px;
 }

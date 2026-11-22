@@ -107,4 +107,4 @@ export const TRANSCRICAO = [
 
 // Os exemplos de imagens com IA (geradas a 22/11/2026, registo em docs/imagens-ia.md).
 export const PEDIDO_BOM =
-  "Overhead flat lay photograph on a crumpled natural linen cloth beside a window, soft morning daylight, gentle real shadows, three small bottles of nail polish in muted terracotta, nude beige and deep burgundy, a worn nail file and a small handmade ceramic dish, real textures and slight imperfections, muted natural colours, calm and honest, generous empty linen space in the upper third, no text, no people, no hands, 35mm film photography, editorial";
+  "Fotografia vista de cima de um pano de linho natural amarrotado, junto a uma janela. Luz suave da manhã e sombras reais. Três frascos pequenos de verniz em tons terracota, bege rosado e cor de vinho escuro, uma lima de unhas gasta e um pires pequeno de cerâmica feito à mão. Texturas reais e pequenas imperfeições, cores naturais e calmas. Muito espaço vazio de linho no terço de cima da imagem. Sem texto, sem pessoas, sem mãos. Fotografia em película de 35 mm, estilo editorial.";

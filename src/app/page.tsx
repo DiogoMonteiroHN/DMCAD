@@ -165,26 +165,23 @@ export default function Pagina() {
           <article className="imagens__exemplo imagens__exemplo--pedido">
             <div className="imagens__texto">
               <h3>O pedido que fiz para a imagem natural</h3>
-              <p>
-                Copia-o, troca os objetos pelos do teu salão e experimenta. Está em inglês porque foi assim que o escrevi
-                para esta ferramenta.
-              </p>
+              <p>Copia-o, troca os objetos pelos do teu salão e experimenta. Foi este o texto, tal e qual.</p>
               <dl className="imagens__partes">
                 <div>
                   <dt>A luz</dt>
-                  <dd>soft morning daylight, gentle real shadows</dd>
+                  <dd>Luz suave da manhã e sombras reais.</dd>
                 </div>
                 <div>
                   <dt>Defeitos de propósito</dt>
-                  <dd>real textures and slight imperfections</dd>
+                  <dd>Texturas reais e pequenas imperfeições.</dd>
                 </div>
                 <div>
                   <dt>Lugar para o teu texto</dt>
-                  <dd>generous empty linen space in the upper third</dd>
+                  <dd>Muito espaço vazio de linho no terço de cima da imagem.</dd>
                 </div>
                 <div>
                   <dt>O que não queres</dt>
-                  <dd>no text, no people, no hands</dd>
+                  <dd>Sem texto, sem pessoas, sem mãos.</dd>
                 </div>
               </dl>
             </div>

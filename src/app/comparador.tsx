@@ -43,7 +43,7 @@ export function Comparador() {
         />
         <div className="comparador__por-cima">
           <Image
-            src="/exemplos/promocao-natural.webp"
+            src="/exemplos/linho-natural.webp"
             alt="Imagem natural gerada por IA: três vernizes em tons terra, uma lima e um pires de cerâmica sobre linho, à luz da janela."
             width={960}
             height={960}
@@ -65,6 +65,9 @@ export function Comparador() {
         </span>
         <span className="comparador__ia">Geradas por IA</span>
         <span className="comparador__pega" aria-hidden="true" />
+        <span className="comparador__botao" aria-hidden="true">
+          ‹ ›
+        </span>
       </div>
       <label htmlFor={id} className="visualmente-escondido">
         Comparar as duas imagens: à esquerda a natural, à direita a genérica

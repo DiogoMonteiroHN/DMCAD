@@ -276,6 +276,11 @@ export default function Pagina() {
                 Hoje, a IA pode fazer o mesmo por um pequeno negócio. E como quase todo o conteúdo sobre IA em português
                 vem do Brasil, a DMCAD fala para Portugal, com as palavras de cá.
               </p>
+              <p>
+                <a className="origem__ligacao" href="/raret">
+                  Ler a história da RARET, com as fontes
+                </a>
+              </p>
               <dl className="origem__paralelo">
                 {RARET_DMCAD.map(([a, b]) => (
                   <div key={a}>

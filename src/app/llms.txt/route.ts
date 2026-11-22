@@ -42,6 +42,9 @@ ${OFERTA.map((o) => `- ${o.titulo}: ${o.texto}`).join("\n")}
 ## Perguntas frequentes
 ${PERGUNTAS.map((p) => `### ${p.pergunta}\n${p.resposta}`).join("\n\n")}
 
+## A RARET (${SITE}/raret)
+- Página sobre a RARET, a estação da Radio Free Europe na Glória do Ribatejo (1951–1996), com cada facto ligado à fonte: o artigo da RFE/RL (2021), o relatório técnico de 1952, a tese de Vitor Madail Herdeiro (ISCTE, 2019), imprensa portuguesa, a Câmara de Salvaterra de Magos e o INE.
+
 ## Contacto
 - Site: ${SITE}
 - Email: ${EMAIL}

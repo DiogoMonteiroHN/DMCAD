@@ -1638,3 +1638,16 @@ html:has(.apresentacao[open]) {
   font-size: 0.875rem;
   color: var(--cinza);
 }
+
+.origem__ligacao {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--letra-titulos), Arial, sans-serif;
+  font-weight: 700;
+  color: var(--papel);
+  text-decoration: underline;
+  text-decoration-color: var(--laranja);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}

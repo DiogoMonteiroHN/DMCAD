@@ -200,7 +200,7 @@ Todas as fontes abaixo foram lidas a **22/11/2026**. As citações foram copiada
 **F36.** Em 2021 havia na vila uma rotunda com antenas, uma exposição comemorativa ao ar livre e um mural sobre a RARET.
 - OBS: «No final da EN367 há uma rotunda com antenas. Depois do Hotel Jackson, junto ao campo de futebol, há uma exposição comemorativa.»
 - OBS: o Hotel Jackson tem «um mural representativo da RARET».
-- Fonte única, de 2021: não confirmei se ainda existem.
+- Fonte única, de 2021. Diogo Monteiro confirmou a 22/11/2026 que os três continuam lá.
 
 **F37.** Parte da série «Glória» (Netflix, 2021) foi filmada nas antigas casas da RARET. O edifício principal não foi usado porque estava muito degradado.
 - OBS: «entre setembro de 2020 e janeiro de 2021, o guionista esteve neste espaço, onde foram rodadas parte das cerca de 600 cenas».

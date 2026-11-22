@@ -391,9 +391,9 @@ export default function Raret() {
                 <Nota id="cmsm" />
               </p>
               <p>
-                Na vila, em 2021, havia uma rotunda com antenas, uma exposição comemorativa ao ar livre e um mural no
-                antigo Hotel Jackson.
-                <Nota id="obs" /> Não confirmei se ainda lá estão.
+                Na vila há uma rotunda com antenas, uma exposição comemorativa ao ar livre e um mural no antigo Hotel
+                Jackson.
+                <Nota id="obs" /> Continuam lá: confirmei-o em novembro de 2026.
               </p>
             </div>
             <figure className="r-voz r-voz--grande">

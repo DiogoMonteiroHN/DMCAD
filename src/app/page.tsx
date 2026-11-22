@@ -291,8 +291,15 @@ export default function Pagina() {
         <div className="envolvente rodape__grelha">
           <p className="rodape__marca">DMCAD</p>
           <p>Tecnologia para avançar. Humanidade para continuar.</p>
+          <address className="rodape__miudo rodape__identificacao">
+            Diogo Madelino Monteiro
+            <br />
+            NIF 232407690
+            <br />
+            Rua Luís de Camões, 55, 2125-066 Glória do Ribatejo
+          </address>
           <p className="rodape__miudo">
-            © 2026 Diogo Monteiro, Glória do Ribatejo. Esta página não usa cookies nem guarda dados de quem a visita.
+            © 2026 Diogo Madelino Monteiro. Esta página não usa cookies nem guarda dados de quem a visita.
           </p>
         </div>
       </footer>

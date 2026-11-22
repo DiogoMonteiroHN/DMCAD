@@ -840,6 +840,17 @@ main {
   color: var(--cinza-claro);
 }
 
+/* identificação de quem presta o serviço */
+.rodape__identificacao {
+  font-style: normal;
+  margin-top: 24px;
+  line-height: 1.6;
+}
+
+.rodape__identificacao + .rodape__miudo {
+  margin-top: 8px;
+}
+
 @media (max-width: 859px) {
   .oferta__item:last-child {
     border-bottom: 0;

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Antena } from "./antena";
+import { Antena3D } from "./antena-3d";
 
 const INSTAGRAM = "https://www.instagram.com/diogomm1992/";
 const EMAIL = "ola@dmcad.pt";
@@ -111,7 +112,9 @@ export default function Pagina() {
               Conhecer o método
             </a>
           </div>
-          <Antena />
+          <Antena3D>
+            <Antena />
+          </Antena3D>
         </section>
 
         <section className="seccao envolvente" id="para-quem" aria-labelledby="titulo-para-quem">

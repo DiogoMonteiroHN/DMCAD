@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Antena } from "./antena";
 
 const INSTAGRAM = "https://www.instagram.com/diogomm1992/";
+const EMAIL = "ola@dmcad.pt";
 
 const PARA_QUEM = [
   {
@@ -281,6 +282,12 @@ export default function Pagina() {
                 Abrir o Instagram @diogomm1992
                 <span className="visualmente-escondido"> (abre noutro separador)</span>
               </a>
+              <p className="contacto__alternativa">
+                Preferes email? Escreve para{" "}
+                <a className="ligacao-forte" href={`mailto:${EMAIL}`}>
+                  {EMAIL}
+                </a>
+              </p>
             </div>
             <p className="contacto__assinatura">Pequeno na origem. Longe no alcance.</p>
           </div>
@@ -297,6 +304,8 @@ export default function Pagina() {
             NIF 232407690
             <br />
             Rua Luís de Camões, 55, 2125-066 Glória do Ribatejo
+            <br />
+            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </address>
           <p className="rodape__miudo">
             © 2026 Diogo Madelino Monteiro. Esta página não usa cookies nem guarda dados de quem a visita.

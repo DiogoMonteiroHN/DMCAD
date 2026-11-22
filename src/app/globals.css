@@ -856,3 +856,16 @@ main {
     border-bottom: 0;
   }
 }
+
+.contacto .contacto__alternativa {
+  margin: 20px 0 0;
+  font-size: 1rem;
+}
+
+.rodape__identificacao a {
+  text-underline-offset: 3px;
+}
+
+.rodape :focus-visible {
+  outline-color: var(--azul-claro);
+}

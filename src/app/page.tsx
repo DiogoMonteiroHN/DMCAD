@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { Antena } from "./antena";
 import { Antena3D } from "./antena-3d";
+import { DadosEstruturados } from "./dados-estruturados";
+import { EMAIL, INSTAGRAM, MORADA, NIF, OFERTA, PERGUNTAS, PESSOA } from "./marca";
 
-const INSTAGRAM = "https://www.instagram.com/diogomm1992/";
-const EMAIL = "ola@dmcad.pt";
 
 const PARA_QUEM = [
   {
@@ -55,24 +55,6 @@ const METODO = [
   },
 ];
 
-const OFERTA = [
-  {
-    titulo: "Formação",
-    texto:
-      "Aprendes a usar a IA no teu negócio: fotos de serviços e produtos, publicações, textos e promoções. Com exemplos de salões, estética e cabeleireiro em Portugal.",
-  },
-  {
-    titulo: "Serviços",
-    texto:
-      "Se não tens tempo para aprender, faço contigo: material publicitário, publicações ou o site, com IA e com a cara do teu negócio.",
-  },
-  {
-    titulo: "Mentoria",
-    texto:
-      "Acompanhamento caso a caso: trazes um problema do teu negócio e resolvemos juntos, com as ferramentas que fazem sentido para ti.",
-  },
-];
-
 const RARET_DMCAD: [string, string][] = [
   ["Glória do Ribatejo", "Raiz e ponto de partida"],
   ["Antena de rádio", "Inteligência artificial"],
@@ -84,6 +66,7 @@ const RARET_DMCAD: [string, string][] = [
 export default function Pagina() {
   return (
     <>
+      <DadosEstruturados />
       <a className="saltar" href="#conteudo">
         Saltar para o conteúdo
       </a>
@@ -273,6 +256,22 @@ export default function Pagina() {
           </table>
         </section>
 
+        <section className="seccao envolvente perguntas" id="perguntas" aria-labelledby="titulo-perguntas">
+          <div className="seccao__cabeca">
+            <h2 id="titulo-perguntas">Perguntas frequentes</h2>
+          </div>
+          <div className="perguntas__lista">
+            {PERGUNTAS.map((p) => (
+              <details key={p.pergunta} className="pergunta">
+                <summary>
+                  <h3>{p.pergunta}</h3>
+                </summary>
+                <p>{p.resposta}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
         <section className="contacto" id="contacto" aria-labelledby="titulo-contacto">
           <div className="envolvente contacto__grelha">
             <div>
@@ -302,16 +301,16 @@ export default function Pagina() {
           <p className="rodape__marca">DMCAD</p>
           <p>Tecnologia para avançar. Humanidade para continuar.</p>
           <address className="rodape__miudo rodape__identificacao">
-            Diogo Madelino Monteiro
+            {PESSOA.nome}
             <br />
-            NIF 232407690
+            NIF {NIF}
             <br />
-            Rua Luís de Camões, 55, 2125-066 Glória do Ribatejo
+            {MORADA.rua}, {MORADA.codigoPostal} {MORADA.localidade}
             <br />
             <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </address>
           <p className="rodape__miudo">
-            © 2026 Diogo Madelino Monteiro. Esta página não usa cookies nem guarda dados de quem a visita.
+            © 2026 {PESSOA.nome}. Esta página não usa cookies nem guarda dados de quem a visita.
           </p>
         </div>
       </footer>

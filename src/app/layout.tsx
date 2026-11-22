@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { DESCRICAO, PESSOA } from "./marca";
 
 // As letras do brandbook (cap. 06): Space Grotesk nos títulos, Inter no texto.
 // O next/font descarrega-as no build e serve-as do próprio site: quem visita
@@ -19,20 +20,23 @@ const texto = Inter({
   display: "swap",
 });
 
-const descricao =
-  "IA prática para salões de beleza, centros de estética e cabeleireiros em Portugal. Ferramentas certas, explicadas de forma simples, sem conteúdo com cara de IA.";
+const descricao = DESCRICAO;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dmcad.pt"),
-  title: "DMCAD · IA prática para negócios de beleza",
+  title: "DMCAD · IA prática para salões de beleza em Portugal",
   description: descricao,
   alternates: { canonical: "/" },
+  authors: [{ name: PESSOA.nome, url: "https://dmcad.pt" }],
+  creator: PESSOA.nome,
+  robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  formatDetection: { telephone: false, address: false, email: false },
   openGraph: {
     type: "website",
     locale: "pt_PT",
     url: "https://dmcad.pt",
     siteName: "DMCAD",
-    title: "DMCAD · IA prática para negócios de beleza",
+    title: "DMCAD · IA prática para salões de beleza em Portugal",
     description: descricao,
   },
   twitter: { card: "summary_large_image" },

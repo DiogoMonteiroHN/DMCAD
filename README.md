@@ -10,8 +10,11 @@ Next.js 16 (página estática), cores e letras do Brand Book v5 (22/11/2026).
 - Factos da marca (oferta, perguntas, contactos, morada): `src/app/marca.ts` — a página, os dados
   estruturados (`dados-estruturados.tsx`) e o `/llms.txt` leem todos daqui.
 - Textos da página: `src/app/page.tsx`. Cores: `src/app/globals.css` (`:root`).
-- O exemplo do topo (`legenda-exemplo.tsx`) e o teste da legenda (`teste-da-legenda.tsx`) usam as
-  mesmas regras, em `sinais.ts`.
+- O topo (`reescrita.tsx`): uma legenda revista à frente de quem vê. O teste da legenda
+  (`teste-da-legenda.tsx`) usa as regras de `sinais.ts`.
+- «O que muda» (`promocao.tsx`, `feed.tsx`, `conversa.tsx`, estilos em `mostra.css`) e a emissão, o
+  indicador de scroll. No telemóvel fica tudo simples; o computador com rato recebe as interações
+  (`rato.ts`). Com «menos movimento», mostra-se logo o estado final.
 - A torre da RARET em 3D: `torre.tsx`, desenhada à mão num canvas 2D (sem bibliotecas).
 - A página da RARET, `/raret` (`src/app/raret/`): cada facto liga a uma fonte de `fontes.ts`; a ficha
   completa, com citações, está em `docs/raret-ficha.md`. O campo de antenas 3D é uma reconstituição

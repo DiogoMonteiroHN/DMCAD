@@ -2,7 +2,11 @@ import Image from "next/image";
 import { Apresentacao } from "./apresentacao";
 import { Comparador } from "./comparador";
 import { DadosEstruturados } from "./dados-estruturados";
-import { LegendaExemplo } from "./legenda-exemplo";
+import { Conversa } from "./conversa";
+import { Feed } from "./feed";
+import { Promocao } from "./promocao";
+import { Reescrita } from "./reescrita";
+import "./mostra.css";
 import { ASSINATURA, EMAIL, INSTAGRAM, MORADA, NIF, OFERTA, PERGUNTAS, PESSOA } from "./marca";
 import { Pedido } from "./pedido";
 import { TesteDaLegenda } from "./teste-da-legenda";
@@ -50,11 +54,20 @@ export default function Pagina() {
         </a>
         <nav aria-label="Principal" className="topo__nav">
           <a href="#teste">O teste</a>
+          <a href="#o-que-muda">O que muda</a>
           <a href="#imagens">Imagens</a>
           <a href="#como">Como trabalho</a>
           <a href="#contacto">Contacto</a>
         </nav>
       </header>
+
+      <div className="emissao" aria-hidden="true">
+        <span className="emissao__linha" />
+        <span className="emissao__sinal">
+          <span className="emissao__onda" />
+          <span className="emissao__onda" />
+        </span>
+      </div>
 
       <main id="conteudo">
         {/* 1. Herói: o problema mostrado, não descrito */}
@@ -76,7 +89,7 @@ export default function Pagina() {
               <Apresentacao />
             </div>
           </div>
-          <LegendaExemplo />
+          <Reescrita />
         </section>
 
         {/* 2. O manifesto: uma frase, grande, que se acende ao descer */}
@@ -100,6 +113,44 @@ export default function Pagina() {
             </p>
           </div>
           <TesteDaLegenda />
+        </section>
+
+        {/* 3a. O que muda ao trabalhar comigo: três demonstrações do que entrego */}
+        <section className="mostra" id="o-que-muda" aria-labelledby="titulo-o-que-muda">
+          <div className="envolvente mostra__cabeca">
+            <h2 id="titulo-o-que-muda">O que muda quando trabalhamos juntos</h2>
+            <p>Três coisas que um salão faz todas as semanas, antes e depois do método. Sem promessas: vê-se.</p>
+          </div>
+
+          <article className="envolvente mostra__capitulo" aria-labelledby="titulo-promocao">
+            <div className="mostra__titulo">
+              <h3 id="titulo-promocao">Uma promoção em 10 minutos</h3>
+              <p>Da fotografia tirada no salão à publicação, sempre sobre a mesma imagem.</p>
+            </div>
+            <Promocao />
+          </article>
+
+          <article className="envolvente mostra__capitulo" aria-labelledby="titulo-feed">
+            <div className="mostra__titulo">
+              <h3 id="titulo-feed">Um feed com uma voz só</h3>
+              <p>
+                Quando cada publicação é feita à pressa, o feed parece de nove salões diferentes. Com a mesma luz, as
+                mesmas cores e a mesma forma de falar, parece o teu.
+              </p>
+            </div>
+            <Feed />
+          </article>
+
+          <article className="envolvente mostra__capitulo" aria-labelledby="titulo-conversa">
+            <div className="mostra__titulo">
+              <h3 id="titulo-conversa">Responder a uma marcação sem parar o serviço</h3>
+              <p>
+                Uma resposta-modelo preparada contigo: o serviço, a duração e onde marcar, sempre igual. Responde-se entre
+                dois clientes, sem escrever tudo de novo.
+              </p>
+            </div>
+            <Conversa />
+          </article>
         </section>
 
         {/* 3b. Imagens com IA: exemplos práticos, gerados para esta página */}

@@ -268,7 +268,7 @@ main {
 }
 
 .heroi h1 {
-  font-size: clamp(3rem, 0.9rem + 7.2vw, 7.5rem);
+  font-size: clamp(3rem, 0.9rem + 5.4vw, 6.25rem);
   line-height: 0.92;
   letter-spacing: -0.05em;
 }

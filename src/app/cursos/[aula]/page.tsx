@@ -42,6 +42,20 @@ export default async function PaginaDaAula({ params }: { params: Promise<{ aula:
     position: a.n,
     isPartOf: { "@type": "Course", "@id": `${SITE}/cursos#curso`, name: CURSO.titulo },
     author: { "@id": `${SITE}/#diogo-monteiro`, "@type": "Person", name: PESSOA.nome },
+    ...(a.video
+      ? {
+          video: {
+            "@type": "VideoObject",
+            name: `Aula ${a.n}: ${a.titulo}`,
+            description: a.resumo,
+            contentUrl: `${SITE}${a.video.src}`,
+            thumbnailUrl: `${SITE}${a.video.capa}`,
+            duration: a.video.duracao,
+            uploadDate: "2026-11-23",
+            inLanguage: "pt-PT",
+          },
+        }
+      : {}),
   };
 
   return (
@@ -64,8 +78,9 @@ export default async function PaginaDaAula({ params }: { params: Promise<{ aula:
         </div>
 
         {a.video && (
-          <video className="aula-pagina__video" src={a.video} controls preload="metadata" playsInline>
-            O teu browser não mostra este vídeo.
+          <video className="aula-pagina__video" src={a.video.src} poster={a.video.capa} controls preload="none" playsInline>
+            O teu browser não mostra este vídeo.{" "}
+            <a href={a.video.src}>Descarregar o vídeo da aula</a>.
           </video>
         )}
 

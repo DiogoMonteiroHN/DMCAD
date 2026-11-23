@@ -17,7 +17,7 @@ export type Aula = {
   imagem?: { src: string; alt: string; largura: number; altura: number; legenda: string; href?: string };
   regra?: string;
   convite: "academy" | "loja";
-  video?: string; // ficheiro do vídeo da aula, quando houver (por exemplo /cursos/aula-1.mp4)
+  video?: { src: string; capa: string; duracao: string }; // o vídeo da aula (HeyGen), comprimido para o site
 };
 
 const LADY = {
@@ -78,6 +78,7 @@ export const AULAS: Aula[] = [
       texto: "QUEM SOU: Tenho um [tipo de negócio] em [terra]. Os meus clientes são [quem são]. O que nos distingue: [uma coisa verdadeira].\nO QUE QUERO: [um post / uma resposta a um cliente / …] sobre [assunto].\nCOMO QUERO: [curto / médio], a tratar por tu, [com uma pergunta no fim]. Não inventes preços, promoções nem promessas.\nEXEMPLO DO MEU ESTILO: [cola aqui um texto teu]",
     },
     convite: "academy",
+    video: { src: "/cursos/aula-1.mp4", capa: "/cursos/aula-1.webp", duracao: "PT2M24S" },
   },
   {
     n: 2,

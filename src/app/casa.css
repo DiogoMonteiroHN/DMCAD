@@ -311,7 +311,7 @@
 .aula-pagina h1 { margin-top: 12px; }
 .aula-pagina__resumo { font-size: 1.25rem; }
 .aula-pagina__sabes { margin-top: 24px; padding: 18px 20px; border-radius: var(--raio); background: var(--hn-rosa-claro); color: #3b3f4c; max-width: 70ch; }
-.aula-pagina__video { display: block; width: 100%; max-width: 900px; margin-top: 32px; border-radius: var(--raio); background: var(--hn-escuro); }
+.aula-pagina__video { display: block; width: 100%; max-width: 380px; aspect-ratio: 9 / 16; margin-top: 32px; border-radius: calc(var(--raio) * 1.5); background: var(--hn-escuro); box-shadow: 0 30px 60px -30px rgb(19 20 27 / 0.45); }
 .aula-pagina__grelha { display: grid; gap: 32px; margin-top: 8px; }
 @media (min-width: 960px) { .aula-pagina__grelha { grid-template-columns: 1.5fr 1fr; align-items: start; } }
 .aula-pagina__passos li { padding-left: 4px; }

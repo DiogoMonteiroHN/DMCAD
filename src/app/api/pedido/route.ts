@@ -11,6 +11,27 @@ import { ASSUNTOS } from "../../marca";
 
 export const runtime = "nodejs";
 
+// Travões contra abusos (23/11/2026). Ficam na memória do servidor e nunca se gravam:
+// no máximo 5 pedidos por hora vindos do mesmo endereço IP, e 30 por hora no total.
+// Como a Vercel pode ter mais do que um servidor ligado, é um travão, não um muro: para
+// um muro, junta-se uma regra de limite na Firewall da Vercel.
+const HORA = 60 * 60 * 1000;
+const POR_IP = 5;
+const NO_TOTAL = 30;
+const pedidosPorIp = new Map<string, number[]>();
+let pedidosNoTotal: number[] = [];
+
+function passaNoTravao(ip: string, agora: number) {
+  pedidosNoTotal = pedidosNoTotal.filter((t) => agora - t < HORA);
+  const doIp = (pedidosPorIp.get(ip) ?? []).filter((t) => agora - t < HORA);
+  if (doIp.length >= POR_IP || pedidosNoTotal.length >= NO_TOTAL) return false;
+  doIp.push(agora);
+  pedidosPorIp.set(ip, doIp);
+  pedidosNoTotal.push(agora);
+  if (pedidosPorIp.size > 5000) pedidosPorIp.clear(); // nunca cresce sem fim
+  return true;
+}
+
 const limpar = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 
 export async function POST(pedido: Request) {
@@ -23,6 +44,15 @@ export async function POST(pedido: Request) {
 
   // A armadilha para robôs: uma pessoa nunca preenche este campo.
   if (limpar(corpo.site, 200)) return Response.json({ ok: true });
+
+  // Uma pessoa não preenche o formulário em menos de 3 segundos. Os robôs respondem
+  // «ok» sem nada ser enviado, para não perceberem que foram apanhados.
+  const agora = Date.now();
+  const aberto = typeof corpo.aberto === "number" ? corpo.aberto : 0;
+  if (!aberto || agora - aberto < 3000 || agora - aberto > 24 * HORA) return Response.json({ ok: true });
+
+  const ip = (pedido.headers.get("x-forwarded-for") ?? "").split(",")[0].trim() || "sem-ip";
+  if (!passaNoTravao(ip, agora)) return Response.json({ erro: "demasiados-pedidos" }, { status: 429 });
 
   const nome = limpar(corpo.nome, 80);
   const contacto = limpar(corpo.contacto, 120);

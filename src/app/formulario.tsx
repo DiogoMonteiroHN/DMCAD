@@ -13,9 +13,11 @@ export function Formulario() {
   const [assunto, setAssunto] = useState<Assunto>("Mentoria");
   const [estado, setEstado] = useState<Estado>("por-enviar");
   const [textoWhatsapp, setTextoWhatsapp] = useState("");
+  const [aberto, setAberto] = useState(0);
 
   // Os botões dos serviços levam a «?assunto=…#contacto»: o assunto já vem escolhido.
   useEffect(() => {
+    setAberto(Date.now());
     const escolhido = new URLSearchParams(window.location.search).get("assunto");
     if (escolhido && (ASSUNTOS as string[]).includes(escolhido)) setAssunto(escolhido as Assunto);
   }, []);
@@ -31,7 +33,7 @@ export function Formulario() {
       const r = await fetch("/api/pedido", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...dados, assunto }),
+        body: JSON.stringify({ ...dados, assunto, aberto }),
       });
       setEstado(r.ok ? "enviado" : "falhou");
     } catch {

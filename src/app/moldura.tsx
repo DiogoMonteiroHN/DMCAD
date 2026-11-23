@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PESSOA } from "./marca";
+import { PESSOA, whatsapp, WHATSAPP_VISIVEL } from "./marca";
 
 // O topo e o rodapé, iguais na página inicial, no curso e na privacidade.
 export function Topo() {
@@ -27,6 +27,19 @@ export function Topo() {
 
 export function Rodape() {
   return (
+    <>
+    <a
+      className="whatsapp-fixo"
+      href={whatsapp("Olá Diogo, vi o teu site e queria falar contigo.")}
+      target="_blank"
+      rel="noopener"
+      aria-label={`Falar comigo no WhatsApp, ${WHATSAPP_VISIVEL} (abre noutro separador)`}
+    >
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M12 3C7 3 3 6.6 3 11c0 2.4 1.2 4.6 3.1 6.1L5.5 21l4-2.1c.8.2 1.6.3 2.5.3 5 0 9-3.6 9-8.1S17 3 12 3Zm-4 9.2a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm4 0a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm4 0a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z" />
+      </svg>
+      <span>WhatsApp</span>
+    </a>
     <footer className="rodape">
       <div className="envolvente rodape__grelha">
         <div>
@@ -46,5 +59,6 @@ export function Rodape() {
         </p>
       </div>
     </footer>
+    </>
   );
 }

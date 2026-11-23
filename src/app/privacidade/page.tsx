@@ -43,6 +43,10 @@ export default function Privacidade() {
             serviço de envio de emails.
           </li>
           <li>
+            <strong>Contra abusos:</strong> o endereço IP de quem envia fica na memória do servidor durante uma hora,
+            só para travar envios em massa. Não é gravado nem segue no email.
+          </li>
+          <li>
             <strong>Por quanto tempo:</strong> o email fica enquanto a conversa durar, e apaga-se ao fim de 12 meses sem
             contacto.
           </li>

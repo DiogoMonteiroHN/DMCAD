@@ -5,7 +5,7 @@
 // No telemóvel (e com «menos movimento»), é uma grelha simples com as mesmas ligações.
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ECOSSISTEMA } from "./marca";
 import { useVivo } from "./vivo";
 
@@ -13,6 +13,9 @@ export function Orbita() {
   const vivo = useVivo();
   const palco = useRef<HTMLDivElement>(null);
   const itens = useRef<(HTMLLIElement | null)[]>([]);
+  const [pausada, setPausada] = useState(false);
+  const pausadaRef = useRef(false);
+  pausadaRef.current = pausada;
 
   useEffect(() => {
     if (!vivo || !palco.current) return;
@@ -24,7 +27,7 @@ export function Orbita() {
     let ry = 0;
     const n = ECOSSISTEMA.length;
     const passo = () => {
-      if (!parado) angulo += 0.0016;
+      if (!parado && !pausadaRef.current) angulo += 0.0016;
       const w = p.clientWidth / 2 - 130;
       const h = p.clientHeight / 2 - 60;
       itens.current.forEach((el, i) => {
@@ -67,6 +70,11 @@ export function Orbita() {
 
   return (
     <div ref={palco} className={vivo ? "orbita orbita--viva" : "orbita"}>
+      {vivo && (
+        <button type="button" className="orbita__pausa" aria-pressed={pausada} onClick={() => setPausada((v) => !v)}>
+          {pausada ? "Retomar a animação" : "Parar a animação"}
+        </button>
+      )}
       {vivo && (
         <div className="orbita__centro" aria-hidden="true">
           <Image src="/hn-hit-nails-logo.png" alt="" width={1920} height={582} sizes="260px" />

@@ -1,6 +1,6 @@
 # Vídeos gerados com IA (muapi)
 
-Gerados a 23/11/2026 com `seedance-2-text-to-video-fast` (5 s cada, 0,75 USD cada; 7 planos, 5,25 USD). Sem pessoas, mãos, texto nem logótipos. O topo (`public/video/topo.mp4`) junta os três planos do topo com transições de 0,6 s, em 1600×900, só com imagens-chave (`-g 1`) para o scroll poder andar para trás e para a frente. Os dos serviços estão em 640×480.
+Gerados a 23/11/2026 com `seedance-2-text-to-video-fast` (5 s cada, 0,75 USD cada; 7 planos, 5,25 USD). Sem pessoas, mãos, texto nem logótipos. O topo junta os três planos com transições de 0,6 s e é servido como 111 imagens (8 por segundo, 1280 px, 2,4 MB no total, `public/video/topo/`), desenhadas num canvas pelo scroll: o vídeo de 6,5 MB que estava antes demorava a carregar e às vezes não mostrava a imagem certa (reportado pelo Diogo a 23/11/2026). Os dos serviços estão em 640×480.
 
 ## topo-a
 

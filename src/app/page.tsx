@@ -1,9 +1,12 @@
 import Image from "next/image";
 import { DadosEstruturados } from "./dados-estruturados";
+import { CartaoServico } from "./cartao-servico";
+import { Cinema } from "./cinema";
+import { DemoPedido } from "./demo-pedido";
 import { Formulario } from "./formulario";
+import { Orbita } from "./orbita";
 import {
   CURSO,
-  ECOSSISTEMA,
   INSTAGRAM,
   INSTAGRAM_NOME,
   MODELO_4_PARTES,
@@ -29,7 +32,7 @@ export default function Pagina() {
 
       <main id="conteudo">
         {/* 1. Quem sou e o que faço */}
-        <section className="heroi" aria-labelledby="titulo-heroi">
+        <Cinema>
           <div className="envolvente heroi__grelha">
             <div className="heroi__texto">
               <p className="heroi__selo">
@@ -80,7 +83,7 @@ export default function Pagina() {
               </li>
             </ul>
           </div>
-        </section>
+        </Cinema>
 
         {/* 2. O curso gratuito */}
         <section className="seccao curso" id="curso" aria-labelledby="titulo-curso">
@@ -106,6 +109,14 @@ export default function Pagina() {
               </a>
             </div>
 
+            <div className="curso__demo">
+              <div className="curso__demo-texto">
+                <h3>Experimenta a diferença</h3>
+                <p>O mesmo pedido, sem e com as 4 partes. Carrega nos botões e vê a resposta mudar.</p>
+              </div>
+              <DemoPedido />
+            </div>
+
             <div className="modelo">
               <div className="modelo__texto">
                 <h3>Para usares já: o modelo das 4 partes</h3>
@@ -128,7 +139,7 @@ export default function Pagina() {
             <h2 id="titulo-servicos">Quando preferes que te ajude a fazer</h2>
             <ul className="servicos__lista">
               {SERVICOS.map((s) => (
-                <li key={s.id} className="servico" id={s.id}>
+                <CartaoServico key={s.id} id={s.id} video={s.id}>
                   <h3>{s.titulo}</h3>
                   <p>{s.texto}</p>
                   <div className="servico__botoes">
@@ -145,7 +156,7 @@ export default function Pagina() {
                       {s.botao}
                     </a>
                   </div>
-                </li>
+                </CartaoServico>
               ))}
             </ul>
             <p className="servicos__nota">O preço combina-se depois de perceber o que precisas.</p>
@@ -209,20 +220,7 @@ export default function Pagina() {
               A HN é a minha casa. Daqui chegas a todo o ecossistema: os produtos, as formações, o Belessa e as marcas da
               família.
             </p>
-            <ul className="hn__lista">
-              {ECOSSISTEMA.map((m) => (
-                <li key={m.nome}>
-                  <a href={m.href} target="_blank" rel="noopener" className="hn__cartao">
-                    <span className="hn__nome">{m.nome}</span>
-                    {m.texto && <span className="hn__texto">{m.texto}</span>}
-                    <span className="hn__endereco" aria-hidden="true">
-                      {m.href.replace(/^https:\/\/(www\.)?/, "")} ↗
-                    </span>
-                    {NOVA_JANELA}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <Orbita />
           </div>
         </section>
 

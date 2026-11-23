@@ -1,3 +1,4 @@
+import { AULAS } from "../cursos/aulas";
 import { CURSO, DESCRICAO, ECOSSISTEMA, PERGUNTAS, PESSOA, SERVICOS, SITE, WHATSAPP_VISIVEL, INSTAGRAM_NOME } from "../marca";
 
 // /llms.txt (llmstxt.org): um resumo em texto simples para os assistentes de IA
@@ -12,7 +13,7 @@ export function GET() {
 ${PESSOA.nome} é da ${PESSOA.terra}, em Portugal, e é ${PESSOA.papel.charAt(0).toLowerCase() + PESSOA.papel.slice(1)}.
 
 ## Curso gratuito: ${CURSO.titulo}
-${CURSO.aulas.map((a) => `- Aula ${a.n}, ${a.titulo}: ${a.sabes}`).join("\n")}
+${AULAS.map((a) => `- Aula ${a.n}, ${a.titulo}: ${a.sabes} ${SITE}/cursos/${a.slug}`).join("\n")}
 Página: ${SITE}/cursos
 
 ## Serviços

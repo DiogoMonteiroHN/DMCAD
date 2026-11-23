@@ -98,110 +98,12 @@ export const SERVICOS: {
   },
 ];
 
-// O curso gratuito (definido a 23/11/2026; o material está no repositório do Belessa,
-// docs/memoria/curso-ia-beleza/). As aulas saem no Instagram do Diogo.
+// O curso gratuito (definido a 23/11/2026). As aulas, por inteiro, estão em
+// cursos/aulas.ts: é a única lista (a página inicial, o sitemap e o llms.txt leem de lá).
 export const CURSO = {
   titulo: "Inteligência Artificial dentro da Beleza",
   resumo:
     "Oito aulas curtas e gratuitas para quem já usa a IA às vezes e quer usá-la bem no salão, no estúdio ou na clínica.",
-  aulas: [
-    {
-      n: 1,
-      titulo: "Pedir bem à IA",
-      sabes: "Pedir em 4 partes, corrigir sem recomeçar e guardar o «quem sou».",
-      passos: [
-        "Quem sou: o negócio, a terra, os clientes e o que te distingue.",
-        "O que quero: a coisa concreta, não «um post».",
-        "Como quero: tamanho, tom e «não inventes preços nem promoções».",
-        "Um exemplo: cola um texto teu e escreve «no mesmo estilo».",
-        "Não gostaste? Responde «mais curto» em vez de recomeçar.",
-      ],
-    },
-    {
-      n: 2,
-      titulo: "Um mês de posts numa tarde",
-      sabes: "Fazer o calendário de 12 posts e transformar uma linha num post pronto.",
-      passos: [
-        "Quatro tipos de post: mostrar o trabalho, ensinar, bastidores e novidade.",
-        "Pede uma tabela: dia, tipo, ideia numa frase e a foto que precisas.",
-        "Tira o que não é verdade no teu negócio.",
-        "Escolhe uma linha e pede o post completo.",
-        "Tira as fotos todas na mesma tarde.",
-      ],
-    },
-    {
-      n: 3,
-      titulo: "Legendas que trazem gente",
-      sabes: "Escrever a 1.ª linha que se pesquisa, as hashtags e o convite certo.",
-      passos: [
-        "A 1.ª linha diz o serviço e a terra.",
-        "O meio ajuda: um cuidado, uma escolha, uma dúvida.",
-        "O fim pede para guardar ou enviar. Nunca «comenta SIM».",
-        "Até 5 hashtags, todas do assunto.",
-        "Escreve o texto alternativo da foto.",
-      ],
-    },
-    {
-      n: 4,
-      titulo: "Fotos com o telemóvel e IA",
-      sabes: "Tirar e tratar uma foto sem mudar o resultado.",
-      passos: [
-        "Luz de janela, sem flash.",
-        "Fundo liso e lente limpa, à altura do produto.",
-        "Tira 3 a 5 fotos e escolhe uma.",
-        "Trata: corta, endireita, um pouco de luz.",
-        "Nunca mudes a cor, a forma ou tapes um defeito.",
-      ],
-    },
-    {
-      n: 5,
-      titulo: "Fotos de clientes",
-      sabes: "Pedir autorização e saber o que nunca vai para uma app de IA.",
-      passos: [
-        "Autorização por escrito antes de publicar.",
-        "Diz que foto, onde, até quando e que se pode retirar.",
-        "Nunca numa app de IA: caras, nomes, telefones, conversas, fichas.",
-        "Para pedir um texto, escreve «um cliente» em vez do nome.",
-        "Sem autorização, mostra o trabalho sem a pessoa.",
-      ],
-    },
-    {
-      n: 6,
-      titulo: "Um Reel de 30 segundos",
-      sabes: "Pedir o guião à IA, gravar e legendar.",
-      passos: [
-        "Pede o guião: gancho, 3 passos e um convite, com os segundos.",
-        "O primeiro segundo é a imagem mais forte.",
-        "Planos de 2 a 4 segundos, com o telemóvel de pé.",
-        "Legendas automáticas, longe do fundo do ecrã.",
-        "Acaba com a mesma imagem do princípio.",
-      ],
-    },
-    {
-      n: 7,
-      titulo: "Ser encontrado",
-      sabes: "Melhorar a bio, o perfil no Google e as respostas a avaliações.",
-      passos: [
-        "A bio diz o que fazes, onde e como se marca.",
-        "O nome do perfil pode levar o serviço.",
-        "Completa o perfil da empresa no Google.",
-        "Responde a todas as avaliações.",
-        "Na IA, cola só o texto da avaliação, sem o nome.",
-      ],
-    },
-    {
-      n: 8,
-      titulo: "Um site feito com IA",
-      sabes: "Criar o site com a IA do Belessa e rever os textos antes de aplicar.",
-      passos: [
-        "Um site diz o que fazes, onde, quanto custa e deixa marcar.",
-        "No Belessa: Website → Aspeto e marca → Criar o site com a IA.",
-        "Escolhe uma das 3 propostas e revê os textos.",
-        "O site antigo fica em «Versões do site».",
-        "Descreve os teus serviços primeiro: a IA escreve com o que sabe.",
-      ],
-    },
-  ],
 };
 
 export const MODELO_4_PARTES = `QUEM SOU: Tenho um [tipo de negócio] em [terra]. Os meus clientes são [quem são]. O que nos distingue: [uma coisa verdadeira].

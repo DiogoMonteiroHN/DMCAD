@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CURSO, INSTAGRAM, MODELO_4_PARTES } from "../marca";
 import { Rodape, Topo } from "../moldura";
+import { AULAS } from "./aulas";
 import "../casa.css";
 
 export const metadata: Metadata = {
@@ -20,33 +22,36 @@ export default function Cursos() {
         <p className="sobretitulo">Curso gratuito</p>
         <h1>{CURSO.titulo}</h1>
         <p>
-          {CURSO.resumo} Cada aula tem até 3 minutos e sai no{" "}
+          {CURSO.resumo} Cada aula tem o passo a passo e exemplos de pedidos e respostas, para fazeres no teu negócio. As
+          aulas em vídeo saem no{" "}
           <a href={INSTAGRAM} target="_blank" rel="noopener">
             meu Instagram
             <span className="visualmente-escondido"> (abre noutro separador)</span>
           </a>
-          . Aqui fica o passo a passo de cada uma, para guardares.
+          .
         </p>
 
-        {CURSO.aulas.map((a) => (
-          <section key={a.n} className="aula-detalhe" aria-labelledby={`aula-${a.n}`}>
-            <span className="aula__n">Aula {a.n}</span>
-            <h2 id={`aula-${a.n}`}>{a.titulo}</h2>
-            <p>
-              <strong>No fim, sabes:</strong> {a.sabes}
-            </p>
-            <ol>
-              {a.passos.map((p) => (
-                <li key={p}>{p}</li>
-              ))}
-            </ol>
-            {a.n === 1 && (
-              <pre className="modelo__quadro" tabIndex={0} aria-label="Modelo das 4 partes para copiar" style={{ marginTop: 20 }}>
-                {MODELO_4_PARTES}
-              </pre>
-            )}
-          </section>
-        ))}
+        <ol className="curso__aulas curso__aulas--ligacoes">
+          {AULAS.map((a) => (
+            <li key={a.n}>
+              <Link href={`/cursos/${a.slug}`} className="aula">
+                <span className="aula__n">Aula {a.n}</span>
+                <h2>{a.titulo}</h2>
+                <p>{a.resumo}</p>
+                <span className="aula__abrir" aria-hidden="true">
+                  Abrir a aula →
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ol>
+
+        <section className="aula-pagina__exemplo" aria-labelledby="titulo-modelo">
+          <h2 id="titulo-modelo">Para começar já: o modelo das 4 partes</h2>
+          <pre className="modelo__quadro" tabIndex={0}>
+            {MODELO_4_PARTES}
+          </pre>
+        </section>
 
         <p style={{ marginTop: 40 }}>
           Preferes que te ajude a fazer? <a href="/#contacto">Pede mentoria ou um serviço</a>.

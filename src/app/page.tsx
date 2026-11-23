@@ -2,6 +2,7 @@ import Image from "next/image";
 import { DadosEstruturados } from "./dados-estruturados";
 import { CartaoServico } from "./cartao-servico";
 import { Cinema } from "./cinema";
+import { AULAS } from "./cursos/aulas";
 import { DemoPedido } from "./demo-pedido";
 import { Formulario } from "./formulario";
 import { Orbita } from "./orbita";
@@ -91,18 +92,20 @@ export default function Pagina() {
             <p className="sobretitulo">Curso gratuito</p>
             <h2 id="titulo-curso">{CURSO.titulo}</h2>
             <p className="seccao__lead">{CURSO.resumo} As aulas saem no meu Instagram, uma de cada vez.</p>
-            <ol className="curso__aulas">
-              {CURSO.aulas.map((a) => (
-                <li key={a.n} className="aula">
-                  <span className="aula__n">Aula {a.n}</span>
-                  <h3>{a.titulo}</h3>
-                  <p>{a.sabes}</p>
+            <ol className="curso__aulas curso__aulas--ligacoes">
+              {AULAS.map((a) => (
+                <li key={a.n}>
+                  <a href={`/cursos/${a.slug}`} className="aula">
+                    <span className="aula__n">Aula {a.n}</span>
+                    <h3>{a.titulo}</h3>
+                    <p>{a.resumo}</p>
+                  </a>
                 </li>
               ))}
             </ol>
             <div className="curso__botoes">
               <a className="botao botao--escuro" href="/cursos">
-                Ver o passo a passo de cada aula
+                Ver todas as aulas
               </a>
               <a className="botao botao--contorno-escuro" href={INSTAGRAM} target="_blank" rel="noopener">
                 Seguir as aulas no Instagram{NOVA_JANELA}

@@ -227,8 +227,16 @@ export default function Pagina() {
         {/* 6. Sobre */}
         <section className="seccao sobre" id="sobre" aria-labelledby="titulo-sobre">
           <div className="envolvente sobre__grelha">
-            <h2 id="titulo-sobre">Da Glória do Ribatejo</h2>
+            <Image
+              className="sobre__foto"
+              src="/diogo-monteiro.webp"
+              alt="Diogo Monteiro, de camisa verde, num fundo cinzento."
+              width={760}
+              height={951}
+              sizes="(min-width: 900px) 34vw, 100vw"
+            />
             <div className="sobre__texto">
+              <h2 id="titulo-sobre">Da Glória do Ribatejo</h2>
               <p>
                 Sou o {PESSOA.nome}, da {PESSOA.terra}. Trabalho com tecnologia e inteligência artificial, e faço parte da
                 HN Hit Nails. O meu trabalho é pôr a IA ao serviço de quem tem pouco tempo entre clientes: a ferramenta

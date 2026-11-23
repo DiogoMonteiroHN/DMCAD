@@ -6,6 +6,8 @@ import { CampoDeAntenas } from "./campo-de-antenas";
 import { Contador } from "./contador";
 import { Setas } from "./setas";
 import { FONTES, FOTOS, FOTOS_NOUTROS_SITIOS, FOTOS_RARET, numeroDaFonte, type IdDeFonte } from "./fontes";
+import "../casa.css";
+import { Rodape, Topo } from "../moldura";
 import "./raret.css";
 
 const TITULO = "RARET: a rádio da Glória do Ribatejo (1951–1996)";
@@ -204,9 +206,10 @@ export default function Raret() {
         Saltar para o conteúdo
       </a>
 
+      <Topo />
       <header className="r-topo envolvente">
-        <Link href="/" className="r-topo__voltar">
-          Diogo Monteiro
+        <Link href="/#sobre" className="r-topo__voltar">
+          Página inicial
         </Link>
         <p className="r-topo__coord">
           39,039° N, 8,657° O
@@ -540,6 +543,7 @@ export default function Raret() {
           </Link>
         </div>
       </footer>
+      <Rodape />
     </div>
   );
 }

@@ -131,8 +131,10 @@
 
 /* ---------- sobre ---------- */
 
-.sobre__grelha { display: grid; gap: 24px; }
-@media (min-width: 900px) { .sobre__grelha { grid-template-columns: 1fr 1.4fr; } }
+.sobre__grelha { display: grid; gap: 32px; }
+@media (min-width: 900px) { .sobre__grelha { grid-template-columns: minmax(260px, 0.8fr) 1.4fr; align-items: center; gap: 56px; } }
+.sobre__foto { width: 100%; max-width: 420px; height: auto; border-radius: calc(var(--raio) * 1.5); box-shadow: 0 30px 60px -30px rgb(19 20 27 / 0.45); }
+.sobre__texto h2 { margin-bottom: 20px; color: var(--hn-escuro); }
 .sobre__texto p + p { margin-top: 16px; }
 .sobre__texto { font-size: 1.125rem; color: #3b3f4c; }
 .sobre__texto a { color: var(--hn-rosa-texto); font-weight: 600; text-underline-offset: 4px; }

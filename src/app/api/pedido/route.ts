@@ -58,6 +58,7 @@ export async function POST(pedido: Request) {
   const contacto = limpar(corpo.contacto, 120);
   const negocio = limpar(corpo.negocio, 120);
   const mensagem = limpar(corpo.mensagem, 2000);
+  const origem = limpar(corpo.origem, 80).replace(/[^\p{L}\p{N} .()_-]/gu, "") || "não se sabe (entrou direto)";
   const assunto = (ASSUNTOS as string[]).includes(limpar(corpo.assunto, 40)) ? limpar(corpo.assunto, 40) : "Outra coisa";
 
   if (!nome || !contacto || !mensagem || corpo.consentimento !== "sim") {
@@ -75,6 +76,7 @@ export async function POST(pedido: Request) {
     `Nome: ${nome}`,
     `Contacto: ${contacto}`,
     `Negócio: ${negocio || "(não disse)"}`,
+    `Veio de: ${origem}`,
     "",
     mensagem,
     "",

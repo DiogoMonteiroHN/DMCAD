@@ -133,7 +133,7 @@ export function CampoDeAntenas() {
 
       // chão: grelha técnica
       ctx.lineWidth = 1;
-      ctx.strokeStyle = "rgba(143,176,247,0.08)";
+      ctx.strokeStyle = "rgba(253,181,205,0.07)";
       ctx.beginPath();
       for (let i = -60; i <= 60; i += 6) {
         for (const [a, b] of [
@@ -162,7 +162,7 @@ export function CampoDeAntenas() {
         grupos[g].lineTo(B.x, B.y);
       }
       grupos.forEach((g, i) => {
-        ctx.strokeStyle = `rgba(242,140,40,${(0.16 + i * 0.13).toFixed(2)})`;
+        ctx.strokeStyle = `rgba(253,181,205,${(0.16 + i * 0.13).toFixed(2)})`;
         ctx.lineWidth = 0.7 + i * 0.12;
         ctx.stroke(g);
       });
@@ -180,7 +180,7 @@ export function CampoDeAntenas() {
             const A = proj([x0, y, z + dz]);
             const B = proj([x1, y, z + dz]);
             if (!A || !B) continue;
-            ctx.strokeStyle = `rgba(47,111,237,${(0.75 * (1 - fase)).toFixed(3)})`;
+            ctx.strokeStyle = `rgba(248,145,179,${(0.75 * (1 - fase)).toFixed(3)})`;
             ctx.lineWidth = 2;
             ctx.beginPath();
             ctx.moveTo(A.x, A.y);

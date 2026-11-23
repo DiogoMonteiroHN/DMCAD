@@ -1,8 +1,18 @@
 /* A página da RARET: escura como uma noite de emissão, com as secções da aldeia
-   em papel. Letras do site (globals.css) e as cores antigas, guardadas só para esta página. Contraste medido:
-   papel/preto 17,2:1 · laranja/preto 7,7:1 · azul-claro/preto 8,7:1 · cinza-claro/preto 9,0:1. */
+   em claro. Desde 23/11/2026 com as cores da HN Hit Nails: as variáveis antigas são
+   redefinidas aqui, só nesta página. Contraste medido: claro/escuro 18,4:1 · rosa/escuro
+   11,1:1 · cinza claro/escuro 8,2:1 · rosa-texto/branco 7,1:1 · cinza/branco 6,1:1. */
 
 .r {
+  --preto: var(--hn-escuro);
+  --papel: var(--hn-fundo);
+  --laranja: var(--hn-rosa);
+  --azul: var(--hn-rosa-forte);
+  --azul-claro: var(--hn-rosa);
+  --azul-texto: var(--hn-rosa-texto);
+  --cinza: var(--hn-cinza);
+  --cinza-claro: var(--hn-cinza-claro);
+
   background: var(--preto);
   color: var(--papel);
 }
@@ -79,7 +89,7 @@
   position: absolute;
   z-index: 1;
   inset: 45% 0 0;
-  background: linear-gradient(rgb(17 17 17 / 0), rgb(17 17 17 / 0.92) 70%);
+  background: linear-gradient(rgb(19 20 27 / 0), rgb(19 20 27 / 0.92) 70%);
   pointer-events: none;
 }
 
@@ -193,7 +203,7 @@
 
 .r-numeros li {
   padding-block: 24px 32px;
-  border-top: 1px solid rgb(247 244 239 / 0.2);
+  border-top: 1px solid rgb(247 246 249 / 0.2);
 }
 
 .r-numeros__grande {
@@ -226,7 +236,7 @@
 
 /* porquê aqui e o caminho do sinal */
 .r-porque {
-  border-top: 1px solid rgb(247 244 239 / 0.14);
+  border-top: 1px solid rgb(247 246 249 / 0.14);
 }
 
 .r-porque__texto {
@@ -450,7 +460,7 @@
   scroll-snap-align: start;
   position: relative;
   padding: 28px 28px 0 0;
-  border-top: 2px solid rgb(247 244 239 / 0.24);
+  border-top: 2px solid rgb(247 246 249 / 0.24);
 }
 
 .r-linha li::before {
@@ -480,7 +490,7 @@
 /* ---------- hoje ---------- */
 
 .r-hoje {
-  border-top: 1px solid rgb(247 244 239 / 0.14);
+  border-top: 1px solid rgb(247 246 249 / 0.14);
 }
 
 .r-hoje h2 {
@@ -624,7 +634,7 @@
 }
 
 .r-fontes__lista li:target {
-  background: rgb(47 111 237 / 0.22);
+  background: rgb(253 181 205 / 0.18);
   border-radius: 6px;
 }
 
@@ -635,7 +645,7 @@
 }
 
 .r-rodape {
-  border-top: 1px solid rgb(247 244 239 / 0.14);
+  border-top: 1px solid rgb(247 246 249 / 0.14);
   padding-block: 40px 56px;
 }
 
@@ -686,7 +696,7 @@
   .r-abertura::after {
     inset: 46vw 0 auto;
     height: 40vw;
-    background: linear-gradient(rgb(17 17 17 / 0), rgb(17 17 17) 90%);
+    background: linear-gradient(rgb(19 20 27 / 0), rgb(19 20 27) 90%);
   }
 }
 
@@ -706,7 +716,7 @@
 .r-setas button {
   min-height: 44px;
   padding: 0 18px;
-  border: 1.5px solid rgb(247 244 239 / 0.4);
+  border: 1.5px solid rgb(247 246 249 / 0.4);
   border-radius: 999px;
   background: none;
   color: var(--papel);
@@ -732,7 +742,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgb(17 17 17 / 0.94) 0, rgb(17 17 17 / 0.86) 38%, rgb(17 17 17 / 0) 68%);
+    background: linear-gradient(90deg, rgb(19 20 27 / 0.94) 0, rgb(19 20 27 / 0.86) 38%, rgb(19 20 27 / 0) 68%);
     pointer-events: none;
     z-index: 1;
   }
@@ -741,7 +751,7 @@
 /* ---------- galeria de ligações ---------- */
 
 .r-galeria {
-  border-top: 1px solid rgb(247 244 239 / 0.14);
+  border-top: 1px solid rgb(247 246 249 / 0.14);
 }
 
 .r-galeria__cabeca {
@@ -784,7 +794,7 @@
   gap: 8px;
   height: 100%;
   padding: 16px 16px 20px;
-  border: 1px solid rgb(247 244 239 / 0.18);
+  border: 1px solid rgb(247 246 249 / 0.18);
   border-radius: 16px;
   color: var(--papel);
   text-decoration: none;
@@ -795,7 +805,7 @@
 
 .r-cartao:hover {
   border-color: var(--laranja);
-  background: rgb(247 244 239 / 0.04);
+  background: rgb(247 246 249 / 0.04);
 }
 
 /* a moldura vazia: um enquadramento de desenho técnico, a dizer que a foto está noutro lado */
@@ -815,7 +825,7 @@
   content: "";
   position: absolute;
   inset: 22% 30%;
-  border: 1.5px dashed rgb(247 244 239 / 0.35);
+  border: 1.5px dashed rgb(247 246 249 / 0.35);
   border-radius: 6px;
 }
 

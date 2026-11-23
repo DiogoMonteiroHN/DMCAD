@@ -14,10 +14,20 @@ export function Formulario() {
   const [estado, setEstado] = useState<Estado>("por-enviar");
   const [textoWhatsapp, setTextoWhatsapp] = useState("");
   const [aberto, setAberto] = useState(0);
+  const [origem, setOrigem] = useState("");
 
   // Os botões dos serviços levam a «?assunto=…#contacto»: o assunto já vem escolhido.
   useEffect(() => {
     setAberto(Date.now());
+    // De onde veio a pessoa: o «?origem=» do link (por exemplo o da bio do Instagram)
+    // ou, sem ele, o site de onde chegou. Só segue no email do pedido; nada se guarda.
+    const doLink = new URLSearchParams(window.location.search).get("origem");
+    let deOnde = "";
+    try {
+      const r = document.referrer ? new URL(document.referrer).hostname : "";
+      if (r && r !== window.location.hostname) deOnde = r;
+    } catch {}
+    setOrigem(doLink ? `${doLink} (link)` : deOnde);
     const escolhido = new URLSearchParams(window.location.search).get("assunto");
     if (escolhido && (ASSUNTOS as string[]).includes(escolhido)) setAssunto(escolhido as Assunto);
   }, []);
@@ -33,7 +43,7 @@ export function Formulario() {
       const r = await fetch("/api/pedido", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...dados, assunto, aberto }),
+        body: JSON.stringify({ ...dados, assunto, aberto, origem }),
       });
       setEstado(r.ok ? "enviado" : "falhou");
     } catch {

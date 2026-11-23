@@ -1,56 +1,33 @@
-import { TRANSCRICAO, VIDEO } from "../marca";
-import { ASSINATURA, DESCRICAO, EMAIL, INSTAGRAM, MORADA, NOME, OFERTA, PERGUNTAS, PESSOA, SITE } from "../marca";
+import { CURSO, DESCRICAO, ECOSSISTEMA, PERGUNTAS, PESSOA, SERVICOS, SITE, WHATSAPP_VISIVEL, INSTAGRAM_NOME } from "../marca";
 
 // /llms.txt (llmstxt.org): um resumo em texto simples para os assistentes de IA
-// (ChatGPT, Claude, Perplexity, Gemini) citarem a DMCAD com os factos certos.
+// citarem o Diogo Monteiro com os factos certos. Sai de marca.ts, como a página.
 export const dynamic = "force-static";
 
 export function GET() {
-  const texto = `# ${NOME}
+  const texto = `# ${PESSOA.nome}
 
 > ${DESCRICAO}
 
-${NOME} é o projecto de ${PESSOA.nome} (${PESSOA.nomeCurto}), ${PESSOA.funcao.charAt(0).toLowerCase() + PESSOA.funcao.slice(1)}, da ${MORADA.localidade}, em Portugal. Assinatura: «${ASSINATURA}»
+${PESSOA.nome} é da ${PESSOA.terra}, em Portugal, e é ${PESSOA.papel.charAt(0).toLowerCase() + PESSOA.papel.slice(1)}.
 
-## Para quem
-- Donos e gerentes de salões de beleza, centros de estética e cabeleireiros em Portugal que fazem o marketing sozinhos.
-- Fora de âmbito, por agora: clínicas (a publicidade em saúde tem regras próprias).
+## Curso gratuito: ${CURSO.titulo}
+${CURSO.aulas.map((a) => `- Aula ${a.n}, ${a.titulo}: ${a.sabes}`).join("\n")}
+Página: ${SITE}/cursos
 
-## Ponto de vista
-- Qualquer negócio se pode destacar com IA, se a souber usar bem.
-- A IA não substitui a equipa; ajuda cada pessoa a render mais.
-- Bom conteúdo com IA não parece feito com IA.
-- Rejeita promessas de dinheiro sem trabalho e resultados garantidos.
+## Serviços
+${SERVICOS.map((s) => `- ${s.titulo}: ${s.texto}`).join("\n")}
 
-## Método
-1. Ferramenta certa: um problema concreto do negócio e uma ferramenta para o resolver.
-2. Explicação simples: um passo de cada vez, em português de Portugal, sem siglas.
-3. Aplicação real: com o material do próprio negócio; o resultado tem de parecer do negócio, não de uma máquina.
-
-## Formas de trabalhar
-${OFERTA.map((o) => `- ${o.titulo}: ${o.texto}`).join("\n")}
-
-## O teste da legenda
-- Em ${SITE}/#teste há um teste gratuito: cola-se a legenda de uma publicação e o site marca os sinais de texto genérico (lugares-comuns, português do Brasil, promessas exageradas, emojis a mais, gritos, falta de pormenor concreto e de próximo passo). Corre no browser; o texto não é enviado nem guardado.
-
-## Apresentação em vídeo
-- ${VIDEO.titulo} (${SITE}${VIDEO.ficheiro}): ${VIDEO.descricao} O que é dito: ${TRANSCRICAO.join(" ")}
-
-## Caso real
-- belessa.pt: programa para salões, estúdios e clínicas (agenda, marcações online, faturação e site), o projecto em que ${PESSOA.nomeCurto} trabalha com IA. Não é cliente da ${NOME}.
+## Ecossistema HN Hit Nails
+${ECOSSISTEMA.map((m) => `- ${m.nome}: ${m.href}${m.texto ? ` — ${m.texto}` : ""}`).join("\n")}
 
 ## Perguntas frequentes
-${PERGUNTAS.map((p) => `### ${p.pergunta}\n${p.resposta}`).join("\n\n")}
-
-## A RARET (${SITE}/raret)
-- Página sobre a RARET, a estação da Radio Free Europe na Glória do Ribatejo (1951–1996), com cada facto ligado à fonte: o artigo da RFE/RL (2021), o relatório técnico de 1952, a tese de Vitor Madail Herdeiro (ISCTE, 2019), imprensa portuguesa, a Câmara de Salvaterra de Magos e o INE.
+${PERGUNTAS.map((p) => `- ${p.pergunta} ${p.resposta}`).join("\n")}
 
 ## Contacto
-- Site: ${SITE}
-- Email: ${EMAIL}
-- Instagram: ${INSTAGRAM}
+- WhatsApp: ${WHATSAPP_VISIVEL}
+- Instagram: ${INSTAGRAM_NOME}
+- Formulário: ${SITE}/#contacto
 `;
-  return new Response(texto, {
-    headers: { "Content-Type": "text/plain; charset=utf-8" },
-  });
+  return new Response(texto, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
 }

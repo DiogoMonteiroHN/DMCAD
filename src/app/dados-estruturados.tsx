@@ -1,114 +1,57 @@
-import {
-  ASSINATURA,
-  DESCRICAO,
-  EMAIL,
-  INSTAGRAM,
-  MORADA,
-  NOME,
-  OFERTA,
-  PERGUNTAS,
-  PESSOA,
-  SITE,
-  TRANSCRICAO,
-  VIDEO,
-} from "./marca";
+import { CURSO, DESCRICAO, ECOSSISTEMA, INSTAGRAM, PERGUNTAS, PESSOA, SERVICOS, SITE } from "./marca";
 
 // Dados estruturados (schema.org, JSON-LD): dizem ao Google e aos motores de IA,
-// sem adivinhar, quem é a DMCAD, quem está por trás, o que oferece e as respostas
-// às perguntas frequentes. Tudo sai de marca.ts, o mesmo que a página mostra.
+// sem adivinhar, quem é o Diogo Monteiro, a que casa pertence, o que oferece e as
+// respostas às perguntas frequentes. Tudo sai de marca.ts, o mesmo que a página mostra.
 export function DadosEstruturados() {
-  const org = `${SITE}/#dmcad`;
   const pessoa = `${SITE}/#diogo-monteiro`;
+  const hn = `${SITE}/#hn-hit-nails`;
 
   const grafo = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": org,
-        name: NOME,
-        url: SITE,
-        logo: `${SITE}/dmcad-logo.png`,
-        image: `${SITE}/opengraph-image.png`,
-        description: DESCRICAO,
-        slogan: ASSINATURA,
-        email: EMAIL,
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: MORADA.rua,
-          postalCode: MORADA.codigoPostal,
-          addressLocality: MORADA.localidade,
-          addressCountry: MORADA.pais,
-        },
-        areaServed: { "@type": "Country", name: "Portugal" },
-        founder: { "@id": pessoa },
-        sameAs: [INSTAGRAM],
-        knowsAbout: [
-          "Inteligência artificial",
-          "Marketing para salões de beleza",
-          "Conteúdo para centros de estética",
-          "Conteúdo para cabeleireiros",
-        ],
-        hasOfferCatalog: {
-          "@type": "OfferCatalog",
-          name: "Formas de trabalhar com a DMCAD",
-          itemListElement: OFERTA.map((o) => ({
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: o.titulo,
-              description: o.texto,
-              provider: { "@id": org },
-              areaServed: { "@type": "Country", name: "Portugal" },
-              audience: {
-                "@type": "BusinessAudience",
-                audienceType: "Salões de beleza, centros de estética e cabeleireiros",
-              },
-            },
-          })),
-        },
-      },
-      {
         "@type": "Person",
         "@id": pessoa,
         name: PESSOA.nome,
-        alternateName: PESSOA.nomeCurto,
-        jobTitle: PESSOA.funcao,
-        homeLocation: { "@type": "Place", name: `${MORADA.localidade}, Portugal` },
+        url: SITE,
+        description: DESCRICAO,
+        homeLocation: { "@type": "Place", name: PESSOA.terra, address: { "@type": "PostalAddress", addressCountry: "PT" } },
+        worksFor: { "@id": hn },
         sameAs: [INSTAGRAM],
+        knowsAbout: ["Inteligência artificial", "Redes sociais", "Criação de sites", "Negócios de beleza"],
+        makesOffer: SERVICOS.map((s) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: s.titulo, description: s.texto },
+        })),
       },
       {
-        "@type": "VideoObject",
-        "@id": `${SITE}/#apresentacao`,
-        name: VIDEO.titulo,
-        description: VIDEO.descricao,
-        thumbnailUrl: `${SITE}${VIDEO.poster}`,
-        contentUrl: `${SITE}${VIDEO.ficheiro}`,
-        uploadDate: VIDEO.data,
-        duration: VIDEO.duracaoIso,
-        inLanguage: "pt-PT",
-        transcript: TRANSCRICAO.join(" "),
-        creator: { "@id": pessoa },
-        publisher: { "@id": org },
+        "@type": "Organization",
+        "@id": hn,
+        name: "HN Hit Nails",
+        url: ECOSSISTEMA[0].href,
       },
       {
         "@type": "WebSite",
         "@id": `${SITE}/#site`,
         url: SITE,
-        name: NOME,
+        name: PESSOA.nome,
         inLanguage: "pt-PT",
-        publisher: { "@id": org },
+        publisher: { "@id": pessoa },
       },
       {
-        "@type": ["WebPage", "FAQPage"],
-        "@id": `${SITE}/#pagina`,
-        url: SITE,
-        name: "DMCAD · IA prática para salões de beleza em Portugal",
-        description: DESCRICAO,
+        "@type": "Course",
+        "@id": `${SITE}/cursos#curso`,
+        name: CURSO.titulo,
+        description: CURSO.resumo,
+        url: `${SITE}/cursos`,
         inLanguage: "pt-PT",
-        isPartOf: { "@id": `${SITE}/#site` },
-        about: { "@id": org },
-        primaryImageOfPage: `${SITE}/opengraph-image.png`,
+        isAccessibleForFree: true,
+        provider: { "@id": pessoa },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE}/#perguntas`,
         mainEntity: PERGUNTAS.map((p) => ({
           "@type": "Question",
           name: p.pergunta,
@@ -118,7 +61,10 @@ export function DadosEstruturados() {
     ],
   };
 
-  // «<» escapado: o JSON vai dentro de uma etiqueta <script>
-  const json = JSON.stringify(grafo).replace(/</g, "\\u003c");
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />;
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(grafo).replace(/</g, "\\u003c") }}
+    />
+  );
 }

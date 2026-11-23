@@ -1,14 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
-import { DESCRICAO, PESSOA } from "./marca";
+import { DESCRICAO, PESSOA, SITE } from "./marca";
 
-// As letras do brandbook (cap. 06): Space Grotesk nos títulos, Inter no texto.
+// As letras da HN Hit Nails (loja, tailwind.config.ts): Manrope nos títulos, Inter no texto.
 // O next/font descarrega-as no build e serve-as do próprio site: quem visita
 // não faz nenhum pedido à Google.
-const titulos = Space_Grotesk({
+const titulos = Manrope({
   subsets: ["latin"],
-  weight: ["500", "700"],
+  weight: ["500", "700", "800"],
   variable: "--letra-titulos",
   display: "swap",
 });
@@ -22,28 +22,30 @@ const texto = Inter({
 
 const descricao = DESCRICAO;
 
+const titulo = "Diogo Monteiro · HN Hit Nails · IA para negócios de beleza";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dmcad.pt"),
-  title: "DMCAD · IA prática para salões de beleza em Portugal",
-  description: descricao,
+  metadataBase: new URL(SITE),
+  title: titulo,
+  description: DESCRICAO,
   alternates: { canonical: "/" },
-  authors: [{ name: PESSOA.nome, url: "https://dmcad.pt" }],
+  authors: [{ name: PESSOA.nome, url: SITE }],
   creator: PESSOA.nome,
   robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   formatDetection: { telephone: false, address: false, email: false },
   openGraph: {
     type: "website",
     locale: "pt_PT",
-    url: "https://dmcad.pt",
-    siteName: "DMCAD",
-    title: "DMCAD · IA prática para salões de beleza em Portugal",
-    description: descricao,
+    url: SITE,
+    siteName: PESSOA.nome,
+    title: titulo,
+    description: DESCRICAO,
   },
   twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F7F4EF",
+  themeColor: "#13141B",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

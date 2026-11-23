@@ -178,7 +178,7 @@ function DadosEstruturados() {
     inLanguage: "pt-PT",
     datePublished: "2026-11-22",
     author: { "@id": `${SITE}/#diogo-monteiro`, "@type": "Person", name: PESSOA.nome },
-    publisher: { "@id": `${SITE}/#dmcad` },
+    publisher: { "@id": `${SITE}/#diogo-monteiro` },
     about: {
       "@type": "Place",
       name: "RARET, Sociedade Anónima de Rádio Retransmissão",
@@ -206,7 +206,7 @@ export default function Raret() {
 
       <header className="r-topo envolvente">
         <Link href="/" className="r-topo__voltar">
-          DMCAD
+          Diogo Monteiro
         </Link>
         <p className="r-topo__coord">
           39,039° N, 8,657° O
@@ -532,11 +532,11 @@ export default function Raret() {
       <footer className="r-rodape">
         <div className="envolvente r-rodape__grelha">
           <p>
-            Esta página faz parte da <Link href="/">DMCAD</Link>. A antena da RARET é o símbolo da marca: uma aldeia
+            Esta página faz parte do site de <Link href="/">Diogo Monteiro</Link>, da Glória do Ribatejo. Uma aldeia
             pequena ligada ao mundo, como pode ser um pequeno negócio com a IA.
           </p>
           <Link href="/#sobre" className="r-rodape__voltar">
-            Voltar à DMCAD
+            Voltar à página inicial
           </Link>
         </div>
       </footer>

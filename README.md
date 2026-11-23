@@ -1,24 +1,29 @@
-# DMCAD — dmcad.pt
+# dmcad.pt — Diogo Monteiro, HN Hit Nails
 
-Landing page da DMCAD: IA prática para negócios de beleza em Portugal.
-Next.js 16 (página estática), cores e letras do Brand Book v5 (22/11/2026).
+O site do Diogo Monteiro, colaborador da HN Hit Nails (a marca DMCAD acabou a 23/11/2026). Next.js 16, cores, letras e
+logótipo da HN Hit Nails (loja `hnhitnails.com`: `src/index.css` e `src/assets/brand/logo-hitnails.png`).
 
     npm install
     npm run dev        # http://localhost:3000
     npm run build      # o que a Vercel corre
 
-- Factos da marca (oferta, perguntas, contactos, morada): `src/app/marca.ts` — a página, os dados
-  estruturados (`dados-estruturados.tsx`) e o `/llms.txt` leem todos daqui.
-- Textos da página: `src/app/page.tsx`. Cores: `src/app/globals.css` (`:root`).
-- O topo (`reescrita.tsx`): uma legenda revista à frente de quem vê. O teste da legenda
-  (`teste-da-legenda.tsx`) usa as regras de `sinais.ts`.
-- «O que muda» (`promocao.tsx`, `feed.tsx`, `conversa.tsx`, estilos em `mostra.css`) e a emissão, o
-  indicador de scroll. No telemóvel fica tudo simples; o computador com rato recebe as interações
-  (`rato.ts`). Com «menos movimento», mostra-se logo o estado final.
-- A torre da RARET em 3D: `torre.tsx`, desenhada à mão num canvas 2D (sem bibliotecas).
-- A página da RARET, `/raret` (`src/app/raret/`): cada facto liga a uma fonte de `fontes.ts`; a ficha
-  completa, com citações, está em `docs/raret-ficha.md`. O campo de antenas 3D é uma reconstituição
-  ilustrativa (`campo-de-antenas.tsx`), a partir do relatório técnico de 1952.
-- SEO, GEO e AEO: metadados em `layout.tsx`, `robots.ts` (aberto aos assistentes de IA), `sitemap.ts`,
-  `llms.txt/route.ts` e o JSON-LD (Organization, Person, WebSite, FAQPage).
-- Sem cookies nem estatísticas; o teste da legenda corre no browser e não envia nada. A página não guarda dados de quem a visita.
+- Factos num só sítio: `src/app/marca.ts` (serviços, curso, ecossistema HN, perguntas, WhatsApp, código de revendedor do
+  Belessa). A página, os dados estruturados (`dados-estruturados.tsx`) e o `/llms.txt` leem daqui.
+- Páginas: `/` (`page.tsx`), `/cursos` (o curso gratuito «Inteligência Artificial dentro da Beleza»), `/privacidade` e
+  `/raret` (a história da RARET, com o seu próprio aspeto e as cores antigas, em `raret/raret.css`).
+- Topo e rodapé: `moldura.tsx`. Estilos: `globals.css` (cores e base) e `casa.css`.
+- Contraste medido (WCAG): quase preto sobre rosa 11,1:1 · rosa-texto `#A3264F` sobre branco 7,1:1 · cinza `#5B6372`
+  sobre branco 6,1:1 · cinza claro `#A6ADBB` sobre quase preto 8,2:1. O rosa da HN nunca leva texto branco.
+
+## O formulário
+
+`formulario.tsx` → `/api/pedido` → um email ao Diogo pelo Resend. Nada fica guardado no site. Sem as variáveis, a rota
+responde 503 e o formulário mostra o WhatsApp com a mensagem já escrita (não finge que enviou).
+
+| Variável (Vercel) | Para quê |
+|---|---|
+| `RESEND_API_KEY` | a chave do Resend |
+| `PEDIDOS_PARA` | o email que recebe os pedidos |
+| `PEDIDOS_DE` | o remetente, de um domínio confirmado no Resend (ex.: `Site <pedidos@dmcad.pt>`) |
+
+Sem cookies nem estatísticas.

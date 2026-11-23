@@ -856,3 +856,83 @@
   text-decoration-thickness: 2px;
   text-underline-offset: 5px;
 }
+
+/* fotografias da RARET: são digitalizações pequenas, por isso ficam num tamanho
+   contido, sobre um passe-partout claro, em vez de esticadas */
+.r-fotos {
+  display: grid;
+  gap: 32px 28px;
+  align-items: start;
+}
+
+@media (min-width: 700px) {
+  .r-fotos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* no ecrã largo: a paisagem larga em cima, o retrato alto ao lado, as três pequenas por baixo */
+@media (min-width: 1000px) {
+  .r-fotos {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .r-foto:nth-child(1) {
+    grid-column: 1 / span 4;
+  }
+
+  .r-foto:nth-child(2) {
+    grid-column: 5 / span 2;
+    grid-row: 1 / span 2;
+  }
+
+  .r-foto:nth-child(3) {
+    grid-column: 1 / span 2;
+  }
+
+  .r-foto:nth-child(4) {
+    grid-column: 3 / span 2;
+  }
+
+  .r-foto:nth-child(5) {
+    grid-column: 1 / span 4;
+  }
+}
+
+.r-foto {
+  margin: 0;
+}
+
+.r-foto__moldura {
+  display: grid;
+  place-items: center;
+  padding: clamp(12px, 2vw, 20px);
+  border-radius: 14px;
+  background: #ece7df;
+}
+
+.r-foto__moldura img {
+  width: 100%;
+  height: auto;
+  max-width: min(100%, 560px);
+  border-radius: 2px;
+  filter: contrast(1.04);
+}
+
+.r-foto figcaption {
+  margin-top: 12px;
+  color: #d9d3c9;
+  max-width: 46ch;
+}
+
+.r-foto__credito {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.875rem;
+  color: var(--cinza-claro);
+}
+
+.r-galeria__mais {
+  margin: clamp(48px, 7vw, 80px) 0 20px;
+  font-size: clamp(1.375rem, 1.1rem + 0.9vw, 1.75rem);
+}

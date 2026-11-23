@@ -137,27 +137,6 @@ export const FOTOS = [
 // segundo about.rferl.org/use-our-content, lido a 23/11/2026.
 export const FOTOS_NOUTROS_SITIOS = [
   {
-    titulo: "A estação vista do ar",
-    detalhe: "Cerca de 1965. Fotografia aérea do centro emissor da Glória.",
-    credito: "© RFE/RL, Inc. Arquivo: Blinken OSA Archivum, HU OSA 300-1-8:3/74",
-    onde: "Blinken OSA Archivum",
-    url: "https://catalog.archivum.org/catalog/qmv2QX5q6L",
-  },
-  {
-    titulo: "As antenas",
-    detalhe: "O campo de antenas da Radio Free Europe na Glória.",
-    credito: "© RFE/RL, Inc. Arquivo: Blinken OSA Archivum, HU OSA 300-1-8:3/16",
-    onde: "Blinken OSA Archivum",
-    url: "https://catalog.archivum.org/catalog/5OWOpVrm6A",
-  },
-  {
-    titulo: "A sala dos emissores",
-    detalhe: "A sala principal dos emissores.",
-    credito: "© RFE/RL, Inc. Arquivo: Blinken OSA Archivum, HU OSA 300-1-8:3/8",
-    onde: "Blinken OSA Archivum",
-    url: "https://catalog.archivum.org/catalog/KpWAG9OKv9",
-  },
-  {
     titulo: "Fotografias de arquivo da RFE/RL",
     detalhe: "As imagens do artigo da própria RFE/RL sobre a Glória, de 2021.",
     credito: "© RFE/RL, Inc.",
@@ -170,5 +149,45 @@ export const FOTOS_NOUTROS_SITIOS = [
     credito: "Fotografias de Tomás Silva / Observador e Paulo Goulart Photography",
     onde: "observador.pt",
     url: "https://observador.pt/especiais/o-mau-foi-a-guerra-fria-ter-acabado-a-historia-as-ruinas-e-os-sobreviventes-de-uma-gloria-transformada-em-serie-portuguesa-da-netflix/",
+  },
+];
+
+// Fotografias da RARET dadas pelo Diogo a 23/11/2026, do arquivo da RFE/RL.
+// Publicadas por decisão dele; crédito à RFE/RL em cada uma.
+export const FOTOS_RARET = [
+  {
+    src: "/raret/raret-antenas-chao.webp",
+    largura: 617,
+    altura: 332,
+    alt: "Fotografia a preto e branco, tirada rente ao chão: uma estrada em primeiro plano e, ao fundo, as torres altas das antenas e postes de linhas.",
+    legenda: "O campo de antenas, visto ao nível do chão.",
+  },
+  {
+    src: "/raret/raret-antenas-sino.webp",
+    largura: 381,
+    altura: 500,
+    alt: "Página a preto e branco com as torres altas e as cortinas de fios das antenas e, em baixo à direita, um sino.",
+    legenda: "As torres e as cortinas de antenas, com o sino que surge também no envelope da «Cruzada pela Liberdade».",
+  },
+  {
+    src: "/raret/raret-vista-aerea.webp",
+    largura: 309,
+    altura: 254,
+    alt: "Fotografia aérea a preto e branco do centro emissor: edifícios brancos entre árvores, caminhos e linhas de antenas ao fundo.",
+    legenda: "O centro emissor da Glória visto do ar.",
+  },
+  {
+    src: "/raret/raret-sala-emissores.webp",
+    largura: 307,
+    altura: 249,
+    alt: "Fotografia a preto e branco de uma sala alta e comprida, com os armários dos emissores alinhados dos dois lados e um balcão de controlo ao fundo.",
+    legenda: "A sala dos emissores.",
+  },
+  {
+    src: "/raret/raret-envelope-cruzada.webp",
+    largura: 547,
+    altura: 162,
+    alt: "Envelope antigo, manchado, com uma etiqueta azul: um sino e as palavras «Crusade for Freedom, in support of Radio Free Europe».",
+    legenda: "Envelope da «Cruzada pela Liberdade», a campanha que angariava fundos para a Radio Free Europe.",
   },
 ];

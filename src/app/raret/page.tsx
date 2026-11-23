@@ -5,7 +5,7 @@ import { PESSOA, SITE } from "../marca";
 import { CampoDeAntenas } from "./campo-de-antenas";
 import { Contador } from "./contador";
 import { Setas } from "./setas";
-import { FONTES, FOTOS, FOTOS_NOUTROS_SITIOS, numeroDaFonte, type IdDeFonte } from "./fontes";
+import { FONTES, FOTOS, FOTOS_NOUTROS_SITIOS, FOTOS_RARET, numeroDaFonte, type IdDeFonte } from "./fontes";
 import "./raret.css";
 
 const TITULO = "RARET: a rádio da Glória do Ribatejo (1951–1996)";
@@ -406,22 +406,31 @@ export default function Raret() {
           </div>
         </section>
 
-        {/* As fotografias da RARET: ligações, porque têm direitos reservados */}
+        {/* As fotografias da RARET */}
         <section className="r-seccao envolvente r-galeria" aria-labelledby="r-fotografias">
           <div className="r-galeria__cabeca">
             <h2 id="r-fotografias">As fotografias da RARET</h2>
-            <p>
-              As fotografias da estação pertencem à RFE/RL e a quem as tirou, e só se podem mostrar aqui com autorização
-              escrita. Até lá, cada cartão leva-te ao sítio onde estão guardadas, com o crédito de quem as fez.
-            </p>
+            <p>Imagens do arquivo da Radio Free Europe: a estação, as antenas e a campanha que a pagava.</p>
           </div>
+          <div className="r-fotos">
+            {FOTOS_RARET.map((f) => (
+              <figure key={f.src} className="r-foto">
+                <div className="r-foto__moldura">
+                  <Image src={f.src} alt={f.alt} width={f.largura} height={f.altura} sizes="(min-width: 1000px) 400px, 100vw" />
+                </div>
+                <figcaption>
+                  {f.legenda}
+                  {f.legenda.includes("Cruzada") && <Nota id="obslusa" />}
+                  <span className="r-foto__credito">© RFE/RL, Inc. Arquivo da RFE/RL.</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          <h3 className="r-galeria__mais">Mais fotografias noutros sítios</h3>
           <ul className="r-galeria__lista">
             {FOTOS_NOUTROS_SITIOS.map((f) => (
               <li key={f.url + f.titulo}>
                 <a className="r-cartao" href={f.url} target="_blank" rel="noopener">
-                  <span className="r-cartao__moldura" aria-hidden="true">
-                    <span className="r-cartao__cantos" />
-                  </span>
                   <span className="r-cartao__titulo">{f.titulo}</span>
                   <span className="r-cartao__detalhe">{f.detalhe}</span>
                   <span className="r-cartao__credito">{f.credito}</span>
@@ -495,8 +504,7 @@ export default function Raret() {
               ))}
             </div>
             <p className="r-gloria__nota">
-              As fotografias da RARET têm direitos reservados: estão em «As fotografias da RARET», mais acima, com
-              ligação para onde estão guardadas.
+              As fotografias da estação estão mais acima, em «As fotografias da RARET».
             </p>
           </div>
         </section>

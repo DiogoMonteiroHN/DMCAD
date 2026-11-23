@@ -131,3 +131,44 @@ export const FOTOS = [
     origem: "https://commons.wikimedia.org/wiki/File:Gl%C3%B3ria_do_Ribatejo_-_Portugal_(385590816).jpg",
   },
 ];
+
+// Fotografias da RARET que existem mas têm direitos reservados: mostram-se como
+// ligações, não se copiam. Licença: autorização escrita da RFE/RL (permissions@rferl.org),
+// segundo about.rferl.org/use-our-content, lido a 23/11/2026.
+export const FOTOS_NOUTROS_SITIOS = [
+  {
+    titulo: "A estação vista do ar",
+    detalhe: "Cerca de 1965. Fotografia aérea do centro emissor da Glória.",
+    credito: "© RFE/RL, Inc. Arquivo: Blinken OSA Archivum, HU OSA 300-1-8:3/74",
+    onde: "Blinken OSA Archivum",
+    url: "https://catalog.archivum.org/catalog/qmv2QX5q6L",
+  },
+  {
+    titulo: "As antenas",
+    detalhe: "O campo de antenas da Radio Free Europe na Glória.",
+    credito: "© RFE/RL, Inc. Arquivo: Blinken OSA Archivum, HU OSA 300-1-8:3/16",
+    onde: "Blinken OSA Archivum",
+    url: "https://catalog.archivum.org/catalog/5OWOpVrm6A",
+  },
+  {
+    titulo: "A sala dos emissores",
+    detalhe: "A sala principal dos emissores.",
+    credito: "© RFE/RL, Inc. Arquivo: Blinken OSA Archivum, HU OSA 300-1-8:3/8",
+    onde: "Blinken OSA Archivum",
+    url: "https://catalog.archivum.org/catalog/KpWAG9OKv9",
+  },
+  {
+    titulo: "Fotografias de arquivo da RFE/RL",
+    detalhe: "As imagens do artigo da própria RFE/RL sobre a Glória, de 2021.",
+    credito: "© RFE/RL, Inc.",
+    onde: "about.rferl.org",
+    url: "https://about.rferl.org/article/gloria-rfes-portuguese-launchpad-over-the-iron-curtain/",
+  },
+  {
+    titulo: "As ruínas e as moradias, em 2021",
+    detalhe: "A herdade abandonada, as antigas casas e o obelisco, na reportagem do Observador.",
+    credito: "Fotografias de Tomás Silva / Observador e Paulo Goulart Photography",
+    onde: "observador.pt",
+    url: "https://observador.pt/especiais/o-mau-foi-a-guerra-fria-ter-acabado-a-historia-as-ruinas-e-os-sobreviventes-de-uma-gloria-transformada-em-serie-portuguesa-da-netflix/",
+  },
+];

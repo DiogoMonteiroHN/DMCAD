@@ -5,7 +5,7 @@ import { PESSOA, SITE } from "../marca";
 import { CampoDeAntenas } from "./campo-de-antenas";
 import { Contador } from "./contador";
 import { Setas } from "./setas";
-import { FONTES, FOTOS, numeroDaFonte, type IdDeFonte } from "./fontes";
+import { FONTES, FOTOS, FOTOS_NOUTROS_SITIOS, numeroDaFonte, type IdDeFonte } from "./fontes";
 import "./raret.css";
 
 const TITULO = "RARET: a rádio da Glória do Ribatejo (1951–1996)";
@@ -406,6 +406,35 @@ export default function Raret() {
           </div>
         </section>
 
+        {/* As fotografias da RARET: ligações, porque têm direitos reservados */}
+        <section className="r-seccao envolvente r-galeria" aria-labelledby="r-fotografias">
+          <div className="r-galeria__cabeca">
+            <h2 id="r-fotografias">As fotografias da RARET</h2>
+            <p>
+              As fotografias da estação pertencem à RFE/RL e a quem as tirou, e só se podem mostrar aqui com autorização
+              escrita. Até lá, cada cartão leva-te ao sítio onde estão guardadas, com o crédito de quem as fez.
+            </p>
+          </div>
+          <ul className="r-galeria__lista">
+            {FOTOS_NOUTROS_SITIOS.map((f) => (
+              <li key={f.url + f.titulo}>
+                <a className="r-cartao" href={f.url} target="_blank" rel="noopener">
+                  <span className="r-cartao__moldura" aria-hidden="true">
+                    <span className="r-cartao__cantos" />
+                  </span>
+                  <span className="r-cartao__titulo">{f.titulo}</span>
+                  <span className="r-cartao__detalhe">{f.detalhe}</span>
+                  <span className="r-cartao__credito">{f.credito}</span>
+                  <span className="r-cartao__ver">
+                    Ver em {f.onde}
+                    <span className="visualmente-escondido"> (abre noutro separador)</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* A Glória do Ribatejo */}
         <section className="r-gloria" aria-labelledby="r-a-gloria">
           <div className="envolvente">
@@ -466,8 +495,8 @@ export default function Raret() {
               ))}
             </div>
             <p className="r-gloria__nota">
-              Não encontrei fotografias da RARET com uma licença que permita publicá-las aqui. As que existem pertencem à
-              RFE/RL, ao Observador, a arquivos e a fotógrafos; estão nas fontes abaixo.
+              As fotografias da RARET têm direitos reservados: estão em «As fotografias da RARET», mais acima, com
+              ligação para onde estão guardadas.
             </p>
           </div>
         </section>

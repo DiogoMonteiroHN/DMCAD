@@ -247,14 +247,15 @@ export default function Pagina() {
             <figure className="prova__ecra">
               <div className="prova__moldura">
                 <Image
-                  src="/belessa-pt.webp"
+                  src="/belessa-pt-2x.webp"
                   alt="Página inicial do belessa.pt: «Fecha a porta às oito e as contas já estão feitas», com a agenda num tablet e a marcação num telemóvel."
-                  width={1600}
-                  height={900}
-                  sizes="(min-width: 960px) 760px, 100vw"
+                  width={2880}
+                  height={1460}
+                  quality={90}
+                  sizes="(min-width: 1000px) 66vw, 100vw"
                 />
               </div>
-              <figcaption>Página inicial do belessa.pt, a 22 de Novembro de 2026.</figcaption>
+              <figcaption>Página inicial do belessa.pt, a 23 de Novembro de 2026.</figcaption>
             </figure>
           </div>
         </section>

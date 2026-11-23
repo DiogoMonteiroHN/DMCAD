@@ -737,3 +737,122 @@
     z-index: 1;
   }
 }
+
+/* ---------- galeria de ligações ---------- */
+
+.r-galeria {
+  border-top: 1px solid rgb(247 244 239 / 0.14);
+}
+
+.r-galeria__cabeca {
+  max-width: 60ch;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+.r-galeria__cabeca h2 {
+  margin-bottom: 16px;
+}
+
+.r-galeria__cabeca p {
+  font-size: 1.125rem;
+  color: #e4dfd6;
+}
+
+.r-galeria__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .r-galeria__lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .r-galeria__lista {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.r-cartao {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  height: 100%;
+  padding: 16px 16px 20px;
+  border: 1px solid rgb(247 244 239 / 0.18);
+  border-radius: 16px;
+  color: var(--papel);
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.r-cartao:hover {
+  border-color: var(--laranja);
+  background: rgb(247 244 239 / 0.04);
+}
+
+/* a moldura vazia: um enquadramento de desenho técnico, a dizer que a foto está noutro lado */
+.r-cartao__moldura {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  background:
+    linear-gradient(rgb(143 176 247 / 0.08) 1px, transparent 1px) 0 0 / 20px 20px,
+    linear-gradient(90deg, rgb(143 176 247 / 0.08) 1px, transparent 1px) 0 0 / 20px 20px,
+    #181818;
+}
+
+.r-cartao__moldura::after {
+  content: "";
+  position: absolute;
+  inset: 22% 30%;
+  border: 1.5px dashed rgb(247 244 239 / 0.35);
+  border-radius: 6px;
+}
+
+.r-cartao__cantos {
+  position: absolute;
+  inset: 12px;
+  background:
+    linear-gradient(var(--laranja), var(--laranja)) left top / 18px 2px no-repeat,
+    linear-gradient(var(--laranja), var(--laranja)) left top / 2px 18px no-repeat,
+    linear-gradient(var(--laranja), var(--laranja)) right bottom / 18px 2px no-repeat,
+    linear-gradient(var(--laranja), var(--laranja)) right bottom / 2px 18px no-repeat;
+}
+
+.r-cartao__titulo {
+  font-family: var(--letra-titulos), Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.r-cartao__detalhe {
+  color: #d9d3c9;
+}
+
+.r-cartao__credito {
+  font-size: 0.875rem;
+  color: var(--cinza-claro);
+}
+
+.r-cartao__ver {
+  margin-top: 6px;
+  font-family: var(--letra-titulos), Arial, sans-serif;
+  font-weight: 500;
+  color: var(--papel);
+  text-decoration: underline;
+  text-decoration-color: var(--laranja);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
